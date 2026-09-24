@@ -43,9 +43,9 @@ Automation opportunities adds five original-geometry symbols from the already pi
 ## Hero illustration (2026-09-17)
 
 - `assets/images/hero-connected-workspace.png`: original 1254 × 1254 built-in imagegen output, preserved unchanged. The earlier `automation-editorial-reference.png` was supplied as a style-only reference.
-- `assets/images/hero-connected-workspace.webp`: 1254 × 1254 web delivery copy, 49,098 bytes.
+- `assets/images/hero-connected-workspace.webp`: 1254 × 1254 compressed delivery copy, 49,098 bytes. Retained as an available lightweight derivative.
 - `assets/images/hero-connected-workspace-mobile.webp`: 640 × 640 web delivery copy, 20,962 bytes.
-- WebP copies encoded at quality 85 using sharp-cli; no content changes. The original PNG is not requested by the page. Labels “Enquiries”, “Scheduling”, and “CRM” are HTML, not baked into the bitmap. Visually inspected: four business objects connect to the central hub, no text, brand marks, dashboard UI or fabricated client data.
+- WebP copies encoded at quality 85 using sharp-cli; no content changes. The homepage now requests the lossless 1254 × 1254 PNG for the visible tablet/desktop hero to preserve fine edge detail. Labels “Enquiries”, “Scheduling”, and “CRM” are HTML, not baked into the bitmap. Visually inspected: four business objects connect to the central hub, no text, brand marks, dashboard UI or fabricated client data.
 
 Exact built-in imagegen prompt:
 

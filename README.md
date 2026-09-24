@@ -28,7 +28,7 @@ Open http://127.0.0.1:4173. For development, run `npm run watch` in a second ter
 
 ## Routes
 
-Every “Book a Consultation” link points to the verified https://www.reachfirst.com/contact-us/ contact page. No scheduling widget is implied. About, blog and policies use verified existing absolute URLs. The original domain is retained. Logo links point to this local homepage.
+Every “Book AI Consultation” link points to the verified https://www.reachfirst.com/contact-us/ contact page. No scheduling widget is implied. About, blog and policies use verified existing absolute URLs. The original domain is retained. Logo links point to this local homepage.
 
 `#services` targets the main service catalog. Its seven articles use the approved `service-*` IDs below; header and footer links have been migrated from the original temporary footer IDs. `#industries` now targets the two editorial audience panels. The intended future page paths below are proposals only, have not been verified, and are not used as hrefs:
 
@@ -69,7 +69,7 @@ Header update: build and syntax checks passed; browser interaction checks at 128
 
 `#hero` replaces the initial intro directly below the header and contains the page's only H1. Wide screens use approximately 55% copy / 45% art; below 1024px, the copy and genuine HTML CTA links precede the illustration. Below 480px the buttons stack. The illustration is conceptual editorial art, with three HTML labels, not a client dashboard or a packaged product. No hero JavaScript or animation is used.
 
-The hero image has explicit 1254 × 1254 dimensions, square aspect ratio, eager loading and high fetch priority. Responsive WebP assets are about 21KB (640px) and 49KB (1254px); the original PNG is preserved but not loaded by the page. The preview server serves WebP with the correct MIME type. See ASSET-SOURCES.md for the exact imagegen prompt and attribution. Explore Services now links to the completed `#services` catalog.
+The hero image has explicit 1254 × 1254 dimensions, square aspect ratio, eager loading and high fetch priority. The visible tablet/desktop hero uses the lossless 1254px PNG for sharper fine edges; the smaller WebP derivatives remain available. See ASSET-SOURCES.md for the exact imagegen prompt and attribution. Explore Services now links to the completed `#services` catalog.
 
 Hero QA: build passed. Browser checks at 1440px, 1024px, 390px and 320px confirmed readable layouts with no horizontal overflow; mobile copy and CTAs precede the image. The responsive image loaded successfully, one H1 remains, and the Explore Services anchor navigated and focused its target with JavaScript disabled. No browser console errors were observed.
 
