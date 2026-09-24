@@ -1,0 +1,19 @@
+{
+  "name": "reach-first-homepage",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tailwindcss -i ./src/styles.css -o ./assets/css/styles.css --minify",
+    "watch": "tailwindcss -i ./src/styles.css -o ./assets/css/styles.css --watch",
+    "preview": "node scripts/preview.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "lucide-static": "1.47.0",
+    "tailwindcss": "4.3.3"
+  }
+}

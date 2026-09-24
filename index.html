@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reach First helps established service businesses plan AI automation, connect their systems, and simplify everyday workflows in Canada and the United States.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>AI Automation &amp; Integrations | Reach First</title>
+  <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/manrope-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body id="top" class="home-page">
+  <!-- Local Lucide definitions keep icons usable in extracted file previews. ISC license: assets/icons/LUCIDE-LICENSE.txt. -->
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+<symbol id="rf-icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="rf-icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 7h10v10"/><path d="M7 17 17 7"/>
+  </symbol>
+<symbol id="rf-icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/>
+  </symbol>
+<symbol id="rf-icon-message-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />
+</symbol>
+<symbol id="rf-icon-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+  <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+</symbol>
+<symbol id="rf-icon-folder-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
+  <path d="m9 13 2 2 4-4" />
+</symbol>
+<symbol id="rf-icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <ellipse cx="12" cy="5" rx="9" ry="3" />
+  <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+  <path d="M3 12A9 3 0 0 0 21 12" />
+</symbol>
+<symbol id="rf-icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</symbol>
+<symbol id="rf-icon-workflow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <rect width="8" height="8" x="3" y="3" rx="2" />
+  <path d="M7 11v4a2 2 0 0 0 2 2h4" />
+  <rect width="8" height="8" x="13" y="13" rx="2" />
+</symbol>
+<symbol id="rf-icon-contact-round" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M16 2v2" />
+  <path d="M17.915 21a6 6 0 10-12 0" />
+  <path d="M8 2v2" />
+  <circle cx="12" cy="11" r="4" />
+  <rect x="3" y="3" width="18" height="18" rx="2" />
+</symbol>
+<symbol id="rf-icon-messages-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+  <path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1" />
+</symbol>
+<symbol id="rf-icon-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <circle cx="6" cy="19" r="3" />
+  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
+  <circle cx="18" cy="5" r="3" />
+</symbol>
+<symbol id="rf-icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+</symbol>
+<symbol id="rf-icon-blocks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2" />
+  <rect x="14" y="2" width="8" height="8" rx="1" />
+</symbol>
+<symbol id="rf-icon-settings-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M14 17H5" />
+  <path d="M19 7h-9" />
+  <circle cx="17" cy="17" r="3" />
+  <circle cx="7" cy="7" r="3" />
+</symbol>
+<symbol id="rf-icon-calendar-days" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M8 2v3" />
+  <path d="M16 2v3" />
+  <rect x="3" y="3" width="18" height="18" rx="2" />
+  <path d="M3 9h18" />
+  <path d="M8 13h.01" />
+  <path d="M12 13h.01" />
+  <path d="M16 13h.01" />
+  <path d="M8 17h.01" />
+  <path d="M12 17h.01" />
+  <path d="M16 17h.01" />
+</symbol>
+<symbol id="rf-icon-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M13 5h8" />
+  <path d="M13 12h8" />
+  <path d="M13 19h8" />
+  <path d="m3 17 2 2 4-4" />
+  <path d="m3 7 2 2 4-4" />
+</symbol>
+  </defs></svg>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- HEADER: future shared WordPress header template part -->
+  <header class="site-header" data-site-header>
+    <div class="site-container header-row">
+      <a class="header-brand" href="./" aria-label="Reach First home"><img class="brand-logo" src="assets/images/reach-first-logo-original.jpg" width="500" height="59" alt="Reach First"></a>
+      <nav aria-label="Primary" class="desktop-nav">
+        <details class="nav-disclosure">
+          <summary class="nav-link" aria-controls="desktop-services">Services<svg class="icon chevron" aria-hidden="true"><use href="#rf-icon-chevron-down"></use></svg></summary>
+          <div id="desktop-services" class="nav-dropdown nav-mega">
+            <div class="nav-mega-groups">
+              <div><p class="nav-group-label">Automate everyday work</p><ul>
+                <li><a href="business-workflow-automation.html"><svg aria-hidden="true"><use href="#rf-icon-workflow"></use></svg><span>Business Workflow Automation<small>Connect tasks, approvals, and systems.</small></span></a></li>
+                <li><a href="sales-crm-automation.html"><svg aria-hidden="true"><use href="#rf-icon-contact-round"></use></svg><span>Sales &amp; CRM Automation<small>Coordinate enquiries and follow-ups.</small></span></a></li>
+                <li><a href="ai-agents-customer-support.html"><svg aria-hidden="true"><use href="#rf-icon-messages-square"></use></svg><span>AI Agents &amp; Customer Support<small>Assist customers with staff handoffs.</small></span></a></li>
+                <li><a href="digital-marketing-services.html"><svg aria-hidden="true"><use href="#rf-icon-route"></use></svg><span>Digital Marketing Services<small>Build visibility, demand, and measurable growth.</small></span></a></li>
+              </ul></div>
+              <div><p class="nav-group-label">Plan, build, and support</p><ul>
+                <li><a href="ai-consulting-automation-planning.html"><svg aria-hidden="true"><use href="#rf-icon-route"></use></svg><span>AI Consulting &amp; Automation Planning<small>Find opportunities and define a roadmap.</small></span></a></li>
+                <li><a href="ai-voice-agents.html"><svg aria-hidden="true"><use href="#rf-icon-phone"></use></svg><span>AI Voice Agents<small>Handle enquiries and appointment requests.</small></span></a></li>
+                <li><a href="custom-ai-applications-integrations.html"><svg aria-hidden="true"><use href="#rf-icon-blocks"></use></svg><span>Custom AI Applications &amp; Integrations<small>Build tools around your workflow.</small></span></a></li>
+                <li><a href="managed-ai-automation-support.html"><svg aria-hidden="true"><use href="#rf-icon-settings-2"></use></svg><span>Managed AI &amp; Automation Support<small>Maintain and improve your implementation.</small></span></a></li>
+              </ul></div>
+            </div>
+            <div class="nav-mega-footer"><span>Start with the work you want to simplify.</span><a href="services.html">Explore all services <svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a></div>
+          </div>
+        </details>
+        <details class="nav-disclosure">
+          <summary class="nav-link" aria-controls="desktop-industries">Industries<svg class="icon chevron" aria-hidden="true"><use href="#rf-icon-chevron-down"></use></svg></summary>
+          <ul id="desktop-industries" class="nav-dropdown">
+            <li><a href="home-field-services.html"><svg class="nav-item-icon" aria-hidden="true"><use href="#rf-icon-settings-2"></use></svg><span>Home &amp; Field Services<small>Enquiries, appointments, and quote follow-ups.</small></span></a></li>
+            <li><a href="professional-services.html"><svg class="nav-item-icon" aria-hidden="true"><use href="#rf-icon-folder-check"></use></svg><span>Professional Services<small>Onboarding, documents, and team knowledge.</small></span></a></li>
+            <li><a href="industries.html"><svg class="nav-item-icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg><span>Explore all industries<small>See audiences, workflows, and relevant services.</small></span></a></li>
+          </ul>
+        </details>
+        <a class="nav-link" href="how-we-work.html">How We Work</a>
+        <a class="nav-link" href="case-studies.html">Case Studies</a>
+        <a class="nav-link" href="insights.html">Blogs</a>
+        <a class="nav-link" href="about-us.html">About</a>
+        <a class="button button-primary" href="book-consultation.html">Book a Consultation<svg class="icon " aria-hidden="true"><use href="#rf-icon-arrow-up-right"></use></svg></a>
+      </nav>
+      <details class="mobile-nav" data-mobile-nav>
+        <summary class="button button-secondary" aria-label="Open navigation" aria-controls="mobile-primary"><svg class="icon" aria-hidden="true"><use href="#rf-icon-menu"></use></svg></summary>
+        <nav id="mobile-primary" aria-label="Mobile primary" class="mobile-nav-panel">
+        <details class="nav-disclosure">
+          <summary class="nav-link" aria-controls="mobile-services">Services<svg class="icon chevron" aria-hidden="true"><use href="#rf-icon-chevron-down"></use></svg></summary>
+          <ul id="mobile-services" class="nav-dropdown">
+            <li><a href="ai-consulting-automation-planning.html">AI Consulting &amp; Automation Planning</a></li>
+            <li><a href="business-workflow-automation.html">Business Workflow Automation</a></li>
+            <li><a href="sales-crm-automation.html">Sales &amp; CRM Automation</a></li>
+            <li><a href="ai-agents-customer-support.html">AI Agents &amp; Customer Support</a></li>
+            <li><a href="ai-voice-agents.html">AI Voice Agents</a></li>
+            <li><a href="custom-ai-applications-integrations.html">Custom AI Applications &amp; Integrations</a></li>
+            <li><a href="managed-ai-automation-support.html">Managed AI &amp; Automation Support</a></li>
+            <li><a href="digital-marketing-services.html">Digital Marketing Services</a></li>
+          </ul>
+        </details>
+        <details class="nav-disclosure">
+          <summary class="nav-link" aria-controls="mobile-industries">Industries<svg class="icon chevron" aria-hidden="true"><use href="#rf-icon-chevron-down"></use></svg></summary>
+          <ul id="mobile-industries" class="nav-dropdown">
+            <li><a href="home-field-services.html">Home &amp; Field Services</a></li>
+            <li><a href="professional-services.html">Professional Services</a></li>
+            <li><a href="industries.html">Explore all industries</a></li>
+          </ul>
+        </details>
+        <a class="nav-link" href="how-we-work.html">How We Work</a>
+        <a class="nav-link" href="case-studies.html">Case Studies</a>
+        <a class="nav-link" href="insights.html">Blogs</a>
+        <a class="nav-link" href="about-us.html">About</a>
+        <div class="mobile-nav-bottom"><p>Practical automation, built around your business.</p><a class="button button-primary" href="book-consultation.html">Book a Consultation<svg class="icon " aria-hidden="true"><use href="#rf-icon-arrow-up-right"></use></svg></a><span>Canada &amp; the United States</span></div>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <!-- END HEADER -->
+
+  <dialog id="mobile-drawer" class="mobile-drawer" aria-label="Reach First navigation">
+    <div class="drawer-top"><img src="assets/images/reach-first-logo-original.jpg" width="500" height="59" alt="Reach First"><button class="button button-secondary drawer-close" type="button" aria-label="Close navigation" autofocus><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+  </dialog>
+
+  <!-- MAIN: future front-page content; section implementations follow separately -->
+  <main id="main-content" tabindex="-1">
+    <!-- HERO: future homepage hero block; copy and controls remain in HTML -->
+    <section id="hero" class="hero section-space" aria-labelledby="hero-heading">
+      <div class="site-container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow">AI automation for North American businesses</p>
+          <h1 id="hero-heading" class="hero-heading">AI Automation for <span>Growing Service Businesses</span></h1>
+          <p class="hero-description">Connect your systems, simplify repetitive work, and give your team more time for customers. Reach First builds practical AI solutions for businesses across Canada and the United States.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="book-consultation.html">Book a Consultation<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-up-right"></use></svg></a>
+            <a class="button button-secondary" href="#services">Explore Services<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </div>
+        </div>
+        <figure class="hero-visual" aria-label="Conceptual illustration of AI-assisted business workflows" data-hero-motion>
+          <div class="hero-diamond-signature" aria-hidden="true">
+            <span class="rf-diamond rf-diamond-outline"></span>
+            <span class="rf-diamond rf-diamond-soft"></span>
+            <span class="rf-diamond rf-diamond-accent"></span>
+          </div>
+          <div class="hero-artwork">
+          <div class="hero-orbit-mask" aria-hidden="true"><div class="hero-orbit"><span class="hero-orbit-outer"></span><span class="hero-orbit-inner"></span></div></div>
+          <picture>
+            <source media="(min-width: 640px)" srcset="assets/images/hero-connected-workspace-mobile.webp 640w, assets/images/hero-connected-workspace.webp 1254w" sizes="(min-width: 1280px) 523px, (min-width: 1024px) 43vw, 544px">
+            <img class="hero-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" width="1254" height="1254" fetchpriority="high" loading="eager" alt="A blue hub connects an enquiry bubble, calendar, customer record, and document folder.">
+          </picture>
+          <svg class="hero-connections" viewBox="0 0 1254 1254" fill="none" aria-hidden="true" focusable="false">
+            <defs>
+              <clipPath id="hero-pipe-enquiry"><path d="M365 447L389 439L535 540L514 553Z"/></clipPath>
+              <clipPath id="hero-pipe-calendar"><path d="M725 541L826 479L850 491L747 560Z"/></clipPath>
+              <clipPath id="hero-pipe-documents"><path d="M509 669L533 681L414 761L390 749Z"/></clipPath>
+              <clipPath id="hero-pipe-crm"><path d="M731 670L841 741L841 766L715 698Z"/></clipPath>
+            </defs>
+            <g clip-path="url(#hero-pipe-enquiry)"><path class="hero-flow hero-flow-enquiry" pathLength="100" d="M380 449L525 547"/></g>
+            <g clip-path="url(#hero-pipe-calendar)"><path class="hero-flow hero-flow-calendar" pathLength="100" d="M733 551L843 485"/></g>
+            <g clip-path="url(#hero-pipe-documents)"><path class="hero-flow hero-flow-documents" pathLength="100" d="M525 679L399 755"/></g>
+            <g clip-path="url(#hero-pipe-crm)"><path class="hero-flow hero-flow-crm" pathLength="100" d="M722 680L845 759"/></g>
+            <g class="hero-ai-glyph" transform="translate(625 586) scale(1 .65)" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M-30-22L0 0L30-22M-30 22L0 0L30 22M0-35V0"/>
+              <g fill="white" stroke="none"><circle cx="-30" cy="-22" r="5"/><circle cx="30" cy="-22" r="5"/><circle cx="-30" cy="22" r="5"/><circle cx="30" cy="22" r="5"/><circle cy="-35" r="5"/><circle r="8"/></g>
+            </g>
+          </svg>
+          <div class="hero-labels">
+            <span class="hero-label hero-label-enquiries"><svg aria-hidden="true"><use href="#rf-icon-message-square"></use></svg>Enquiries</span>
+            <span class="hero-label hero-label-scheduling"><svg aria-hidden="true"><use href="#rf-icon-calendar-days"></use></svg>Scheduling</span>
+            <span class="hero-label hero-label-crm"><svg aria-hidden="true"><use href="#rf-icon-contact-round"></use></svg>CRM</span>
+          </div>
+          </div>
+          <figcaption class="hero-visual-caption"><span>AI-assisted workflows <span aria-hidden="true">·</span> Conceptual illustration</span><button class="hero-motion-control" type="button" data-hero-motion-toggle aria-label="Pause animation" title="Pause animation" hidden><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path class="motion-pause-icon" d="M5 4h3v12H5zM12 4h3v12h-3z"/><path class="motion-play-icon" d="m6 3 10 7-10 7z"/></svg></button></figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- END HERO -->
+
+    <!-- AUTOMATION OPPORTUNITIES: recognizable tasks before the service catalog -->
+    <section id="automation-opportunities" class="section-space opportunities" aria-labelledby="opportunities-heading">
+      <div class="site-container">
+        <div class="opportunities-intro">
+          <h2 id="opportunities-heading" class="text-heading font-semibold">What Can You Automate?</h2>
+          <p class="mt-4 text-lg text-muted">Start with the repetitive work that slows your team down.</p>
+        </div>
+        <div class="opportunities-grid">
+          <article class="opportunity opportunity-enquiries" aria-labelledby="enquiries-heading">
+            <div class="opportunity-copy">
+              <span class="opportunity-icon" aria-hidden="true"><svg><use href="#rf-icon-message-square"></use></svg></span>
+              <h3 id="enquiries-heading">Customer enquiries</h3>
+              <p class="opportunity-problem">Requests arrive. Who needs to respond?</p>
+              <p>Capture the request and route it to the right person.</p>
+            </div>
+            <div class="opportunity-visual visual-routing" aria-hidden="true">
+              <div class="visual-canvas">
+                <svg class="visual-paths" viewBox="0 0 320 180" fill="none"><path d="M62 90H153Q166 90 166 77V44Q166 31 180 31H252M166 90H252M166 90V137Q166 150 180 150H252"/><path class="route-highlight" d="M62 90H252"/><circle class="route-packet" cx="65" cy="90" r="4"/></svg>
+                <div class="visual-node routing-request"><svg><use href="#rf-icon-message-square"></use></svg><span>Enquiry</span></div>
+                <div class="routing-hub"><svg><use href="#rf-icon-route"></use></svg></div>
+                <div class="routing-destination routing-destination-top">Sales</div>
+                <div class="routing-destination routing-destination-active"><svg><use href="#rf-icon-contact-round"></use></svg>Service team</div>
+                <div class="routing-destination routing-destination-bottom">Office</div>
+              </div>
+            </div>
+          </article>
+          <article class="opportunity opportunity-followups" aria-labelledby="followups-heading">
+            <div class="opportunity-copy">
+              <span class="opportunity-icon" aria-hidden="true"><svg><use href="#rf-icon-bell"></use></svg></span>
+              <h3 id="followups-heading">Lead follow-ups</h3>
+              <p class="opportunity-problem">The conversation needs a next step.</p>
+              <p>Organize reminders and appropriate next steps in the CRM.</p>
+            </div>
+            <div class="opportunity-visual visual-reminder" aria-hidden="true">
+              <div class="visual-canvas">
+                <div class="reminder-record"><span class="visual-sheet-title"><svg><use href="#rf-icon-contact-round"></use></svg>CRM record</span><span class="visual-skeleton"></span><span class="visual-skeleton short"></span><div class="reminder-task"><span class="mini-check"></span>Next step</div></div>
+                <div class="reminder-clock"><svg><use href="#rf-icon-bell"></use></svg></div>
+                <div class="reminder-note"><svg><use href="#rf-icon-calendar-days"></use></svg><span>Follow-up reminder</span><span class="reminder-dot"></span></div>
+              </div>
+            </div>
+          </article>
+          <article class="opportunity opportunity-onboarding" aria-labelledby="onboarding-heading">
+            <div class="opportunity-copy">
+              <span class="opportunity-icon" aria-hidden="true"><svg><use href="#rf-icon-folder-check"></use></svg></span>
+              <h3 id="onboarding-heading">Client onboarding</h3>
+              <p class="opportunity-problem">A new client means several handoffs.</p>
+              <p>Coordinate forms, documents, tasks, and handoffs.</p>
+            </div>
+            <div class="opportunity-visual visual-onboarding" aria-hidden="true">
+              <div class="visual-canvas">
+                <div class="onboarding-sheet"><span class="visual-skeleton"></span><span class="visual-skeleton short"></span></div>
+                <div class="onboarding-folder"></div>
+                <div class="onboarding-checklist"><span class="onboarding-row"><span class="mini-check"></span>Form</span><span class="onboarding-row"><span class="mini-check"></span>Documents</span><span class="onboarding-row"><span class="mini-check"></span>Team handoff</span></div>
+                <span class="onboarding-badge"><svg><use href="#rf-icon-folder-check"></use></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="opportunity opportunity-admin" aria-labelledby="admin-heading">
+            <div class="opportunity-copy">
+              <span class="opportunity-icon" aria-hidden="true"><svg><use href="#rf-icon-database"></use></svg></span>
+              <h3 id="admin-heading">Daily administration</h3>
+              <p class="opportunity-problem">The same details, entered again.</p>
+              <p>Connect systems and reduce repeated data entry.</p>
+            </div>
+            <div class="opportunity-visual visual-records" aria-hidden="true">
+              <div class="visual-canvas">
+                <svg class="visual-paths" viewBox="0 0 320 180" fill="none"><path d="M80 75H240M80 107H240"/></svg>
+                <div class="record-system record-source"><svg><use href="#rf-icon-database"></use></svg><span>Source</span><i></i><i></i><i></i></div>
+                <div class="record-packet record-packet-one"></div><div class="record-packet record-packet-two"></div><div class="record-packet record-packet-three"></div>
+                <div class="record-system record-destination"><svg><use href="#rf-icon-blocks"></use></svg><span>Connected tool</span><i></i><i></i><i></i></div>
+                <span class="records-caption">Enter once. Carry details through.</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="opportunities-footer"><a class="opportunities-link nav-link" href="#services">Explore automation services<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a><button class="opportunities-replay" type="button" data-opportunities-replay hidden><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2.6 8M3 4v6h6"/></svg>Replay illustrations</button></div>
+      </div>
+    </section>
+    <!-- END AUTOMATION OPPORTUNITIES -->
+
+    <!-- SERVICES: service articles and stable navigation targets -->
+    <section id="services" class="services section-space" aria-labelledby="services-heading" tabindex="-1">
+      <div class="site-container">
+        <h2 id="services-heading" class="services-heading text-heading font-semibold">AI Automation Services Built Around Your Business</h2>
+        <div class="services-featured">
+          <article id="service-workflow" class="service service-feature" aria-labelledby="service-workflow-heading" tabindex="-1">
+            <div class="service-art service-art-workflow" aria-hidden="true">
+              <svg viewBox="0 0 320 180" fill="none" focusable="false">
+                <ellipse class="service-art-ground" cx="160" cy="147" rx="113" ry="15"/>
+                <path class="service-art-connection" d="M78 87H117Q130 87 130 101V108H183Q195 108 195 93V70H241"/>
+                <g class="service-art-float"><rect class="service-art-edge" x="37" y="46" width="65" height="82" rx="12"/><rect class="service-art-paper" x="31" y="40" width="65" height="82" rx="12"/><rect class="service-art-tint" x="43" y="52" width="23" height="23" rx="6"/><path class="service-art-ink" d="M49 63h11m-5-5v10"/><path class="service-art-rule" d="M44 89h38M44 101h25"/></g>
+                <path class="service-art-edge" d="m161 67 39 32v12l-39 31-40-31V99Z"/><path class="service-art-blue" d="m161 59 39 32-39 32-40-32Z"/><path class="service-art-white" d="m148 91 9 8 18-18"/>
+                <g class="service-art-float service-art-float-delayed"><rect class="service-art-edge" x="227" y="42" width="65" height="82" rx="12"/><rect class="service-art-paper" x="221" y="36" width="65" height="82" rx="12"/><path class="service-art-rule" d="M237 55h32M237 67h22"/><rect class="service-art-tint" x="233" y="81" width="41" height="22" rx="6"/><path class="service-art-ink" d="m245 91 5 4 9-9"/></g>
+                <circle class="service-art-signal" cx="113" cy="87" r="4"/><circle class="service-art-signal" cx="205" cy="70" r="4"/>
+              </svg>
+            </div>
+            <h3 id="service-workflow-heading">Business Workflow <span class="service-title-tail">Automation</span></h3>
+            <p>Connect tools and automate tasks, approvals, and data transfers.</p>
+            <a class="service-link" href="business-workflow-automation.html" aria-label="Explore Business Workflow Automation">Explore this service<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </article>
+          <article id="service-sales-crm" class="service service-feature" aria-labelledby="service-sales-crm-heading" tabindex="-1">
+            <div class="service-art service-art-sales" aria-hidden="true">
+              <svg viewBox="0 0 320 180" fill="none" focusable="false">
+                <ellipse class="service-art-ground" cx="160" cy="150" rx="104" ry="14"/>
+                <path class="service-art-connection" d="M71 67H113M213 86h35v39h-30"/>
+                <g class="service-art-float"><path class="service-art-edge" d="M40 39h46a9 9 0 0 1 9 9v27a9 9 0 0 1-9 9H64L48 96V84h-8a9 9 0 0 1-9-9V48a9 9 0 0 1 9-9Z"/><path class="service-art-paper" d="M35 33h46a9 9 0 0 1 9 9v27a9 9 0 0 1-9 9H59L43 90V78h-8a9 9 0 0 1-9-9V42a9 9 0 0 1 9-9Z"/><path class="service-art-rule" d="M41 49h33M41 61h22"/></g>
+                <rect class="service-art-edge" x="114" y="30" width="103" height="121" rx="13"/><rect class="service-art-paper" x="107" y="23" width="103" height="121" rx="13"/>
+                <circle class="service-art-tint" cx="158" cy="62" r="24"/><circle class="service-art-blue" cx="158" cy="54" r="8"/><path class="service-art-blue" d="M143 77v-5a15 12 0 0 1 30 0v5Z"/><path class="service-art-rule" d="M128 103h60M138 116h40"/>
+                <g class="service-art-float service-art-float-delayed"><rect class="service-art-blue" x="233" y="101" width="52" height="43" rx="10"/><path class="service-art-white" d="M246 98v8m26-8v8m-38 8h50"/><g fill="white"><circle cx="248" cy="127" r="2"/><circle cx="259" cy="127" r="2"/><circle cx="270" cy="127" r="2"/></g></g>
+                <circle class="service-art-signal" cx="97" cy="67" r="4"/><circle class="service-art-signal" cx="248" cy="90" r="4"/>
+              </svg>
+            </div>
+            <h3 id="service-sales-crm-heading">Sales &amp; CRM <span class="service-title-tail">Automation</span></h3>
+            <p>Coordinate enquiry capture, lead assignment, follow-ups, reminders, and CRM updates.</p>
+            <a class="service-link" href="sales-crm-automation.html" aria-label="Explore Sales and CRM Automation">Explore this service<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </article>
+          <article id="service-agents" class="service service-feature" aria-labelledby="service-agents-heading" tabindex="-1">
+            <div class="service-art service-art-agents" aria-hidden="true">
+              <svg viewBox="0 0 320 180" fill="none" focusable="false">
+                <ellipse class="service-art-ground" cx="164" cy="148" rx="108" ry="14"/>
+                <path class="service-art-connection" d="M78 84h40M207 89h31v24"/>
+                <g class="service-art-float"><rect class="service-art-edge" x="39" y="50" width="58" height="75" rx="9"/><rect class="service-art-paper" x="33" y="44" width="58" height="75" rx="9"/><path class="service-art-rule" d="M47 62h29M47 75h29M47 88h18"/><path class="service-art-ink" d="m63 104 4 4 9-9"/></g>
+                <path class="service-art-edge" d="M130 35h68a16 16 0 0 1 16 16v53a16 16 0 0 1-16 16h-18l-22 18v-18h-26a16 16 0 0 1-16-16V51a16 16 0 0 1 16-16Z"/>
+                <path class="service-art-blue" d="M124 29h68a16 16 0 0 1 16 16v53a16 16 0 0 1-16 16h-18l-22 18v-18h-26a16 16 0 0 1-16-16V45a16 16 0 0 1 16-16Z"/>
+                <path class="service-art-white" d="m158 49 0 36m-18-27 36 18m-36 0 36-18"/><g fill="white"><circle cx="158" cy="49" r="4"/><circle cx="158" cy="85" r="4"/><circle cx="140" cy="58" r="4"/><circle cx="176" cy="58" r="4"/><circle cx="140" cy="76" r="4"/><circle cx="176" cy="76" r="4"/></g>
+                <g class="service-art-float service-art-float-delayed"><circle class="service-art-paper" cx="254" cy="119" r="27"/><circle class="service-art-blue" cx="254" cy="110" r="7"/><path class="service-art-blue" d="M241 134v-4a13 11 0 0 1 26 0v4Z"/></g>
+                <path class="service-art-ink" d="m233 91 5 5 5-5"/>
+              </svg>
+            </div>
+            <h3 id="service-agents-heading">AI Agents &amp; <span class="service-title-tail">Customer Support</span></h3>
+            <p>Assistants that use approved business information and hand complex requests to staff.</p>
+            <a class="service-link" href="ai-agents-customer-support.html" aria-label="Explore AI Agents and Customer Support">Explore this service<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </article>
+        </div>
+        <div class="services-supporting">
+          <article id="service-marketing" class="service service-compact" aria-labelledby="service-marketing-heading" tabindex="-1">
+            <span class="service-emblem" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" focusable="false"><rect class="service-art-edge" x="16" y="15" width="48" height="50" rx="10"/><rect class="service-art-paper" x="11" y="10" width="48" height="50" rx="10"/><path class="service-art-rule" d="M21 22h28"/><path class="service-art-ink" d="M22 48V39m10 9V32m10 16V25"/><circle class="service-art-blue" cx="22" cy="38" r="3"/><circle class="service-art-blue" cx="32" cy="31" r="3"/><circle class="service-art-blue" cx="42" cy="24" r="3"/><circle class="service-art-blue" cx="61" cy="59" r="13"/><path class="service-art-white" d="M54 61h14m-4-5 4 5-4 5"/></svg></span>
+            <h3 id="service-marketing-heading">Digital Marketing <span class="service-title-tail">Services</span></h3>
+            <p>Build a coordinated digital presence across brand, web, search, social media, and advertising.</p>
+            <a class="service-link" href="digital-marketing-services.html" aria-label="Explore Digital Marketing Services">Explore this service<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </article>
+          <article id="service-consulting" class="service service-compact" aria-labelledby="service-consulting-heading" tabindex="-1">
+            <span class="service-emblem" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" focusable="false"><rect class="service-art-edge" x="19" y="13" width="46" height="58" rx="10"/><rect class="service-art-paper" x="14" y="8" width="46" height="58" rx="10"/><path class="service-art-rule" d="M25 21h23"/><path class="service-art-ink" d="M27 52h15a7 7 0 0 0 0-14h-7a7 7 0 0 1 0-14"/><circle class="service-art-blue" cx="27" cy="52" r="4"/><circle class="service-art-tint" cx="35" cy="24" r="4"/><circle class="service-art-blue" cx="59" cy="58" r="13"/><path class="service-art-white" d="m55 63 3-10 6 3Z"/></svg></span>
+            <h3 id="service-consulting-heading">AI Consulting &amp; Automation Planning</h3>
+            <p>Identify useful opportunities and define an implementation roadmap.</p>
+            <a class="service-link" href="ai-consulting-automation-planning.html" aria-label="Explore AI Consulting and Automation Planning">Explore this service<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </article>
+          <article id="service-voice" class="service service-compact" aria-labelledby="service-voice-heading" tabindex="-1">
+            <span class="service-emblem" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" focusable="false"><circle class="service-art-edge" cx="42" cy="42" r="29"/><circle class="service-art-paper" cx="38" cy="38" r="29"/><path class="service-art-ink" d="M21 34v9m8-18v27m9-32v37m9-29v21m9-13v6"/><rect class="service-art-blue" x="47" y="49" width="26" height="24" rx="8"/><path class="service-art-white" d="M54 59h12m-4-4 4 4-4 4"/></svg></span>
+            <h3 id="service-voice-heading">AI Voice Agents</h3>
+            <p>Handle inbound enquiries, appointment requests, call routing, and summaries.</p>
+            <a class="service-link" href="ai-voice-agents.html" aria-label="Explore AI Voice Agents">Explore this service<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </article>
+          <article id="service-custom" class="service service-compact" aria-labelledby="service-custom-heading" tabindex="-1">
+            <span class="service-emblem" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" focusable="false"><rect class="service-art-edge" x="13" y="18" width="53" height="45" rx="10"/><rect class="service-art-paper" x="8" y="13" width="53" height="45" rx="10"/><path class="service-art-rule" d="M9 25h51"/><path class="service-art-ink" d="m26 33-7 7 7 7m17-14 7 7-7 7m-6-15-5 17"/><rect class="service-art-blue" x="49" y="49" width="24" height="24" rx="7"/><path class="service-art-white" d="M61 54v14m-7-7h14"/></svg></span>
+            <h3 id="service-custom-heading">Custom AI Applications &amp; Integrations</h3>
+            <p>Build tailored tools, document workflows, portals, and system connections.</p>
+            <a class="service-link" href="custom-ai-applications-integrations.html" aria-label="Explore Custom AI Applications and Integrations">Explore this service<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </article>
+          <article id="service-managed" class="service service-compact" aria-labelledby="service-managed-heading" tabindex="-1">
+            <span class="service-emblem" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" focusable="false"><rect class="service-art-edge" x="19" y="20" width="47" height="46" rx="12"/><rect class="service-art-paper" x="14" y="15" width="47" height="46" rx="12"/><path class="service-art-ink" d="M25 30h26M25 45h26"/><circle class="service-art-blue" cx="33" cy="30" r="4"/><circle class="service-art-blue" cx="44" cy="45" r="4"/><path class="service-art-ink" d="M11 56a31 31 0 0 0 55-1m0 0v10m0-10H56M63 15a31 31 0 0 0-50 3m0 0V8m0 10h10"/></svg></span>
+            <h3 id="service-managed-heading">Managed AI &amp; Automation Support</h3>
+            <p>Keep automations supported with monitoring, maintenance, improvements, and team support.</p>
+            <a class="service-link" href="managed-ai-automation-support.html" aria-label="Explore Managed AI and Automation Support">Explore this service<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- END SERVICES -->
+
+    <!-- INDUSTRIES: two launch audiences; conceptual artwork, HTML workflow labels -->
+    <section id="industries" class="industries section-space" aria-labelledby="industries-heading" tabindex="-1">
+      <div class="site-container">
+        <div class="industries-intro"><h2 id="industries-heading" class="text-heading font-semibold">Built for Businesses Like Yours</h2><div><p>Explore practical workflows for teams in the field and businesses built on client relationships.</p><a class="service-link" href="industries.html">Explore all industries<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a></div></div>
+        <article id="home-field-services" class="industry-panel industry-primary" aria-labelledby="home-field-heading" tabindex="-1">
+          <div class="industry-copy">
+            <p class="industry-kicker">Field operations</p>
+            <h3 id="home-field-heading">Home &amp; Field Services</h3>
+            <ul class="industry-tags" aria-label="Home and field service business examples"><li>HVAC</li><li>Plumbing</li><li>Electrical</li><li>Roofing</li><li>Cleaning</li><li>Landscaping</li><li>Property maintenance</li></ul>
+            <p class="industry-workflow-label">Workflows to consider</p>
+            <ul class="industry-workflows">
+              <li><span class="industry-workflow-icon" aria-hidden="true"><svg><use href="#rf-icon-route"></use></svg></span><div><h4>Enquiry routing</h4><p>Capture new requests and direct them to the right person.</p></div></li>
+              <li><span class="industry-workflow-icon" aria-hidden="true"><svg><use href="#rf-icon-calendar-days"></use></svg></span><div><h4>Appointment coordination</h4><p>Connect appointment requests, calendars, and team handoffs.</p></div></li>
+              <li><span class="industry-workflow-icon" aria-hidden="true"><svg><use href="#rf-icon-bell"></use></svg></span><div><h4>Quote follow-ups</h4><p>Organize reminders and next steps for outstanding quotes.</p></div></li>
+            </ul>
+            <a class="button button-primary" href="home-field-services.html" aria-label="Explore Home and Field Services">Explore this industry<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </div>
+          <figure class="industry-visual">
+            <div class="industry-artwork"><img class="industry-image" src="assets/images/industry-home-field.webp" width="960" height="960" loading="lazy" decoding="async" alt="Conceptual illustration of service tools connected to a calendar and enquiry bubble."><div class="industry-visual-labels" aria-hidden="true"><span class="industry-badge industry-badge-first"><svg><use href="#rf-icon-message-square"></use></svg>Enquiries</span><span class="industry-badge industry-badge-second"><svg><use href="#rf-icon-calendar-days"></use></svg>Appointments</span><span class="industry-badge industry-badge-third"><svg><use href="#rf-icon-bell"></use></svg>Quote follow-ups</span></div></div>
+            <figcaption><span class="industry-caption-mark" aria-hidden="true"></span>Practical connections for office and field teams</figcaption>
+          </figure>
+        </article>
+        <article id="professional-services" class="industry-panel industry-secondary" aria-labelledby="professional-heading" tabindex="-1">
+          <div class="industry-copy">
+            <p class="industry-kicker">Client operations</p>
+            <h3 id="professional-heading">Professional Services</h3>
+            <ul class="industry-tags" aria-label="Professional service business examples"><li>Consulting firms</li><li>Agencies</li><li>Recruitment businesses</li></ul>
+            <p class="industry-workflow-label">Workflows to consider</p>
+            <ul class="industry-workflows">
+              <li><span class="industry-workflow-icon" aria-hidden="true"><svg><use href="#rf-icon-contact-round"></use></svg></span><div><h4>Client onboarding</h4><p>Coordinate intake forms, tasks, and handoffs for new clients.</p></div></li>
+              <li><span class="industry-workflow-icon" aria-hidden="true"><svg><use href="#rf-icon-folder-check"></use></svg></span><div><h4>Document handling</h4><p>Route documents between the people and systems that need them.</p></div></li>
+              <li><span class="industry-workflow-icon" aria-hidden="true"><svg><use href="#rf-icon-messages-square"></use></svg></span><div><h4>Internal knowledge &amp; support</h4><p>Help teams find approved information and route questions to staff.</p></div></li>
+            </ul>
+            <a class="button button-secondary" href="professional-services.html" aria-label="Explore Professional Services">Explore this industry<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+          </div>
+          <figure class="industry-visual">
+            <div class="industry-artwork"><img class="industry-image" src="assets/images/industry-professional.webp" width="960" height="960" loading="lazy" decoding="async" alt="Conceptual document workspace with a folder connected to records and a document."><div class="industry-visual-labels" aria-hidden="true"><span class="industry-badge industry-badge-first"><svg><use href="#rf-icon-contact-round"></use></svg>Onboarding</span><span class="industry-badge industry-badge-second"><svg><use href="#rf-icon-folder-check"></use></svg>Documents</span><span class="industry-badge industry-badge-third"><svg><use href="#rf-icon-messages-square"></use></svg>Team knowledge</span></div></div>
+            <figcaption><span class="industry-caption-mark" aria-hidden="true"></span>Connected information throughout the client relationship</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+    <!-- END INDUSTRIES -->
+
+    <!-- AUTOMATION DEMO: local simulation, no external systems or real records -->
+    <section id="automation-demo" class="automation-demo section-space" aria-labelledby="demo-heading">
+      <div class="site-container demo-layout">
+        <div class="demo-copy">
+          <h2 id="demo-heading" class="text-heading font-semibold">See Automation in Action</h2>
+          <p class="demo-disclosure">Illustrative workflow demo — sample data</p>
+          <p class="text-muted">Follow a fictional enquiry from an initial request to a follow-up draft. See how information can move between steps, with staff reviewing the details before an outgoing action.</p>
+          <p class="demo-boundary">This example runs only in your browser. It is not connected to a CRM and does not create records or send messages. It illustrates a possible workflow, not client results or a software product.</p>
+          <div class="demo-sample">
+            <h3><svg class="icon" aria-hidden="true"><use href="#rf-icon-message-square"></use></svg>Fictional enquiry</h3>
+            <blockquote>“Could you arrange a routine equipment inspection next week?”</blockquote>
+            <p class="demo-sample-note">No customer name, address, or contact details.</p>
+          </div>
+        </div>
+        <div class="demo-workspace" data-workflow-demo>
+          <div class="demo-workspace-heading"><span class="demo-workspace-icon" aria-hidden="true"><svg class="icon"><use href="#rf-icon-workflow"></use></svg></span><div><h3>Enquiry to follow-up</h3><p>Browser-only example</p></div><span class="demo-phase" data-demo-phase>Five stages</span></div>
+          <div class="demo-controls" hidden>
+            <button class="button button-primary" type="button" data-demo-run><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg>Run Example</button>
+            <button class="button button-secondary" type="button" data-demo-reset>Reset</button>
+          </div>
+          <p class="demo-status" role="status" aria-live="polite" aria-atomic="true" data-demo-status>Static example: read the five stages below. Staff review comes before the notification preview and follow-up draft.</p>
+          <div class="demo-stage-layout">
+          <ol class="demo-sequence">
+            <li data-demo-step>
+              <span class="demo-step-icon" aria-hidden="true"><svg><use href="#rf-icon-message-square"></use></svg></span>
+              <div class="demo-step-heading"><h3>Enquiry received</h3><span class="demo-step-state">Example step</span></div>
+              <p>The fictional inspection request enters the example.</p>
+            </li>
+            <li data-demo-step>
+              <span class="demo-step-icon" aria-hidden="true"><svg><use href="#rf-icon-list-checks"></use></svg></span>
+              <div class="demo-step-heading"><h3>Details organized</h3><span class="demo-step-state">Example step</span></div>
+              <p>Request: routine equipment inspection. Preferred timing: next week.</p>
+            </li>
+            <li data-demo-step>
+              <span class="demo-step-icon" aria-hidden="true"><svg><use href="#rf-icon-contact-round"></use></svg></span>
+              <div class="demo-step-heading"><h3>CRM record prepared</h3><span class="demo-step-state">Example step</span></div>
+              <p>A sample record is prepared locally: inspection request, timing, and service-desk queue. Nothing is saved to a CRM. Staff review is required before continuing to the notification preview.</p>
+            </li>
+            <li data-demo-step>
+              <span class="demo-step-icon" aria-hidden="true"><svg><use href="#rf-icon-bell"></use></svg></span>
+              <div class="demo-step-heading"><h3>Team notified</h3><span class="demo-step-state">Example step</span></div>
+              <p>Notification preview: “Inspection request ready for the service desk.” No notification is sent.</p>
+            </li>
+            <li data-demo-step>
+              <span class="demo-step-icon" aria-hidden="true"><svg><use href="#rf-icon-messages-square"></use></svg></span>
+              <div class="demo-step-heading"><h3>Follow-up prepared</h3><span class="demo-step-state">Example step</span></div>
+              <p>Sample draft: “Thanks for your enquiry. Our team will review your preferred timing.” Staff approval is required before sending; this demo cannot send it.</p>
+            </li>
+          </ol>
+          <div class="demo-preview" data-demo-preview hidden>
+            <div class="demo-preview-heading"><span>Sample output</span><span data-demo-count>Ready</span></div>
+            <div class="demo-output-area">
+            <div class="demo-output" data-demo-output="input"><h4>One incoming enquiry</h4><div class="demo-message"><svg class="icon" aria-hidden="true"><use href="#rf-icon-message-square"></use></svg><p>Could you arrange a routine equipment inspection next week?</p></div><p class="demo-output-note">An invented request with no identifying information.</p></div>
+            <div class="demo-output" data-demo-output="details" hidden><h4>The useful details, organized</h4><dl class="demo-record"><div><dt>Request</dt><dd>Routine equipment inspection</dd></div><div><dt>Preferred timing</dt><dd>Next week</dd></div></dl><p class="demo-output-note">Sample details extracted from the fictional enquiry.</p></div>
+            <div class="demo-output" data-demo-output="record" hidden><h4>A record for staff to review</h4><dl class="demo-record"><div><dt>Request</dt><dd>Routine equipment inspection</dd></div><div><dt>Preferred timing</dt><dd>Next week</dd></div><div><dt>Suggested queue</dt><dd>Service desk</dd></div></dl><p class="demo-output-note">Preview only. Nothing is saved to a CRM.</p></div>
+            <div class="demo-output" data-demo-output="notice" hidden><h4>A team notification preview</h4><div class="demo-message"><svg class="icon" aria-hidden="true"><use href="#rf-icon-bell"></use></svg><p>Inspection request ready for the service desk.</p></div><p class="demo-output-note">The sample review is complete. No notification is sent.</p></div>
+            <div class="demo-output" data-demo-output="draft" hidden><h4>A follow-up draft, ready for review</h4><div class="demo-message"><svg class="icon" aria-hidden="true"><use href="#rf-icon-messages-square"></use></svg><p>Thanks for your enquiry. Our team will review your preferred timing.</p></div><p class="demo-output-note">Staff approval is still required before sending. This example cannot send messages.</p></div>
+            </div>
+            <div class="demo-review" data-demo-review>
+              <h4><svg class="icon" aria-hidden="true"><use href="#rf-icon-contact-round"></use></svg><span data-demo-review-heading>People stay involved</span></h4>
+              <p data-demo-review-note>The example pauses at stage 3 so you can review the sample record and routing.</p>
+              <div class="demo-review-action"><button class="button button-primary" type="button" data-demo-continue hidden>Review sample &amp; continue<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></button></div>
+            </div>
+          </div>
+          </div>
+          <p class="demo-footnote">Conceptual workflow. No CRM connection, saved records, or outgoing messages.</p>
+          <noscript><p class="demo-noscript">JavaScript is off. The complete example above remains available as a static sequence.</p></noscript>
+        </div>
+      </div>
+    </section>
+    <!-- END AUTOMATION DEMO -->
+
+    <!-- HOW WE WORK: ordered process, suitable for a WordPress section block -->
+    <section id="how-we-work" class="process section-space" aria-labelledby="process-heading" tabindex="-1">
+      <div class="site-container process-layout">
+        <div class="process-intro">
+          <div><p class="eyebrow">How we work</p><h2 id="process-heading" class="text-heading font-semibold">From First Conversation to Working Automation</h2></div>
+          <p class="process-introduction">Start with the work. Test a focused use case. Prepare your team for the implementation and its ongoing use.</p>
+        </div>
+          <ol class="process-timeline">
+            <li><span class="process-number" aria-hidden="true">01</span><span class="process-symbol" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" focusable="false"><rect class="process-shadow" x="16" y="14" width="41" height="51" rx="9"/><rect class="process-paper" x="11" y="9" width="41" height="51" rx="9"/><path class="process-line" d="M22 23h18M22 33h11M22 43h13"/><circle class="process-paper" cx="51" cy="49" r="15"/><path class="process-stroke" d="m62 60 10 10M45 49h12m-6-6v12"/></svg></span><div class="process-step-content"><h3>Assess</h3><p>Understand the workflow, systems, and priorities.</p></div></li>
+            <li><span class="process-number" aria-hidden="true">02</span><span class="process-symbol" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" focusable="false"><path class="process-shadow" d="M22 19h36v41a10 10 0 0 1-10 10H32a10 10 0 0 1-10-10Z"/><path class="process-paper" d="M18 15h36v41a10 10 0 0 1-10 10H28a10 10 0 0 1-10-10Z"/><path class="process-stroke" d="M15 15h42M26 9h20M26 29h19"/><path class="process-fill" d="M23 45h26v10a7 7 0 0 1-7 7H30a7 7 0 0 1-7-7Z"/><circle class="process-paper" cx="59" cy="48" r="13"/><path class="process-stroke" d="m54 48 4 4 7-8"/></svg></span><div class="process-step-content"><h3>Pilot</h3><p>Test a focused use case and agree how success will be evaluated.</p></div></li>
+            <li><span class="process-number" aria-hidden="true">03</span><span class="process-symbol" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" focusable="false"><path class="process-line" d="M24 23h31v33H24Z"/><rect class="process-shadow" x="12" y="12" width="25" height="25" rx="7"/><rect class="process-paper" x="8" y="8" width="25" height="25" rx="7"/><rect class="process-shadow" x="45" y="45" width="25" height="25" rx="7"/><rect class="process-fill" x="41" y="41" width="25" height="25" rx="7"/><path class="process-stroke" d="M16 21h9m-4-4v9"/><path d="m48 54 4 4 8-9" stroke="white" stroke-width="2"/><circle class="process-paper" cx="55" cy="23" r="6"/><circle class="process-paper" cx="24" cy="56" r="6"/></svg></span><div class="process-step-content"><h3>Implement</h3><p>Connect systems, test behavior, and prepare the rollout.</p></div></li>
+            <li><span class="process-number" aria-hidden="true">04</span><span class="process-symbol" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" focusable="false"><path class="process-shadow" d="M13 22q14-8 28 0 14-8 28 0v39q-14-8-28 0-14-8-28 0Z"/><path class="process-paper" d="M9 18q14-8 28 0 14-8 28 0v39q-14-8-28 0-14-8-28 0Z"/><path class="process-stroke" d="M37 19v38"/><path class="process-line" d="M17 29h11M17 39h11M46 29h11"/><circle class="process-fill" cx="59" cy="57" r="13"/><path d="M55 54a4 4 0 0 1 8 0c0 3-4 3-4 6m0 4h.01" stroke="white" stroke-width="1.6"/></svg></span><div class="process-step-content"><h3>Train</h3><p>Help staff use the solution and understand exceptions.</p></div></li>
+            <li><span class="process-number" aria-hidden="true">05</span><span class="process-symbol" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none" focusable="false"><circle class="process-shadow" cx="42" cy="42" r="24"/><circle class="process-paper" cx="38" cy="38" r="24"/><path class="process-stroke" d="M8 37a30 30 0 0 1 51-21m0 0V6m0 10H49M68 39a30 30 0 0 1-51 23m0 0v10m0-10h10"/><path class="process-line" d="M25 32h26M25 44h26"/><circle class="process-fill" cx="32" cy="32" r="4"/><circle class="process-fill" cx="45" cy="44" r="4"/></svg></span><div class="process-step-content"><h3>Support</h3><p>Monitor, maintain, and improve the agreed implementation.</p></div></li>
+          </ol>
+          <div class="process-next"><div><p class="process-next-heading">Start with your workflow</p><p>Tell us about the process you’d like to improve.</p></div><a class="button button-primary process-cta" href="book-consultation.html">Book a Consultation<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-up-right"></use></svg></a></div>
+      </div>
+    </section>
+    <!-- END HOW WE WORK -->
+
+    <!-- INTEGRATIONS: categories, not vendor compatibility or partnership claims -->
+    <section id="integrations" class="integrations section-space" aria-labelledby="integrations-heading">
+      <div class="site-container integrations-layout">
+        <div class="integrations-copy">
+          <p class="eyebrow">Your tools, connected</p>
+          <h2 id="integrations-heading" class="text-heading font-semibold">Connect the Tools Your Team Already Uses</h2>
+          <p class="integrations-description">Integration options depend on each system’s available connections, permissions, and project requirements.</p>
+          <p class="integrations-support">We assess how your existing systems can connect before recommending an implementation.</p>
+          <a class="service-link integrations-link" href="book-consultation.html">Discuss your existing tools<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-up-right"></use></svg></a>
+        </div>
+        <figure class="integrations-visual" aria-labelledby="integrations-caption">
+          <div class="integrations-map">
+            <svg class="integrations-connectors" viewBox="0 0 600 360" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <g class="integration-tracks"><path d="M184 60H218Q248 60 248 90V150Q248 180 280 180"/><path d="M416 60H382Q352 60 352 90V150Q352 180 320 180"/><path d="M184 180H280"/><path d="M416 180H320"/><path d="M184 300H218Q248 300 248 270V210Q248 180 280 180"/><path d="M416 300H382Q352 300 352 270V210Q352 180 320 180"/></g>
+              <g class="integration-signals"><path pathLength="100" d="M184 60H218Q248 60 248 90V150Q248 180 280 180"/><path pathLength="100" d="M416 60H382Q352 60 352 90V150Q352 180 320 180"/><path pathLength="100" d="M184 180H280"/><path pathLength="100" d="M416 180H320"/><path pathLength="100" d="M184 300H218Q248 300 248 270V210Q248 180 280 180"/><path pathLength="100" d="M416 300H382Q352 300 352 270V210Q352 180 320 180"/></g>
+            </svg>
+            <div class="integrations-hub" aria-hidden="true"><span class="integration-hub-orbit"></span><span class="integration-hub-stack"><span class="integration-hub-mark"><img src="assets/images/reach-first-r-mark.png" width="500" height="500" alt=""></span></span><span class="integration-hub-label">Your workflow</span></div>
+            <ul class="integrations-categories">
+              <li><span class="integration-category-icon"><svg aria-hidden="true"><use href="#rf-icon-contact-round"></use></svg></span><div><span class="integration-category-name">CRM</span><span class="integration-category-detail">Contacts &amp; records</span></div></li>
+              <li><span class="integration-category-icon"><svg aria-hidden="true"><use href="#rf-icon-calendar-days"></use></svg></span><div><span class="integration-category-name">Email &amp; Calendar</span><span class="integration-category-detail">Messages &amp; appointments</span></div></li>
+              <li><span class="integration-category-icon"><svg aria-hidden="true"><use href="#rf-icon-messages-square"></use></svg></span><div><span class="integration-category-name">Phone &amp; Messaging</span><span class="integration-category-detail">Calls &amp; conversations</span></div></li>
+              <li><span class="integration-category-icon"><svg aria-hidden="true"><use href="#rf-icon-database"></use></svg></span><div><span class="integration-category-name">Accounting</span><span class="integration-category-detail">Invoices &amp; transactions</span></div></li>
+              <li><span class="integration-category-icon"><svg aria-hidden="true"><use href="#rf-icon-list-checks"></use></svg></span><div><span class="integration-category-name">Project Management</span><span class="integration-category-detail">Tasks &amp; handoffs</span></div></li>
+              <li><span class="integration-category-icon"><svg aria-hidden="true"><use href="#rf-icon-folder-check"></use></svg></span><div><span class="integration-category-name">Documents</span><span class="integration-category-detail">Files &amp; forms</span></div></li>
+            </ul>
+          </div>
+          <figcaption id="integrations-caption"><span aria-hidden="true"></span>Connection options shaped around your workflow</figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- END INTEGRATIONS -->
+
+    <!-- WHY REACH FIRST: proposed delivery approach, not historical proof -->
+    <section id="why-reach-first" class="why-reach-first section-space" aria-labelledby="why-heading">
+      <div class="site-container why-layout">
+        <div class="why-introduction">
+          <p class="eyebrow why-eyebrow">Our proposed delivery approach</p>
+          <h2 id="why-heading" class="text-heading font-semibold">Practical Automation, Built Around Your Business</h2>
+          <p class="why-description">We propose an approach shaped by your day-to-day work, the systems you use, and the people who will use the automation.</p>
+          <div class="why-composition" aria-label="Workflows, systems, and people considered together">
+            <span class="why-composition-item"><svg aria-hidden="true"><use href="#rf-icon-route"></use></svg><span>Workflows</span></span>
+            <span class="why-composition-plus" aria-hidden="true">+</span>
+            <span class="why-composition-item"><svg aria-hidden="true"><use href="#rf-icon-blocks"></use></svg><span>Systems</span></span>
+            <span class="why-composition-plus" aria-hidden="true">+</span>
+            <span class="why-composition-item"><svg aria-hidden="true"><use href="#rf-icon-messages-square"></use></svg><span>People</span></span>
+          </div>
+        </div>
+        <ul class="why-points" aria-label="Our four delivery principles">
+          <li><span class="why-point-icon" aria-hidden="true"><svg><use href="#rf-icon-route"></use></svg></span><div><h3>Start with the business process</h3><p>Understand the work before selecting tools.</p></div></li>
+          <li><span class="why-point-icon" aria-hidden="true"><svg><use href="#rf-icon-blocks"></use></svg></span><div><h3>Connect the implementation</h3><p>Bring workflows, systems, and custom development together where needed.</p></div></li>
+          <li><span class="why-point-icon" aria-hidden="true"><svg><use href="#rf-icon-messages-square"></use></svg></span><div><h3>Keep people involved</h3><p>Define review points and staff handoffs.</p></div></li>
+          <li><span class="why-point-icon" aria-hidden="true"><svg><use href="#rf-icon-folder-check"></use></svg></span><div><h3>Plan for ongoing use</h3><p>Include training, documentation, and agreed support.</p></div></li>
+        </ul>
+      </div>
+    </section>
+    <!-- END WHY REACH FIRST -->
+
+    <!-- FAQ: native disclosures; draft answers, no structured data -->
+    <section id="faq" class="faq section-space" aria-labelledby="faq-heading">
+      <div class="site-container faq-layout">
+        <div class="faq-introduction">
+          <p class="eyebrow">Before we begin</p>
+          <h2 id="faq-heading" class="text-heading font-semibold">Questions About AI Automation?</h2>
+          <p class="faq-description">A few practical details about planning, implementation, and ongoing support.</p>
+        </div>
+        <div class="faq-items">
+          <details class="faq-item" open>
+            <summary><span>Where should we start?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Start with one repeatable process, understand its current steps, and assess whether automation is useful.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>Can you work with our existing software?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>We assess available integrations, permissions, and limitations before confirming a solution for your existing software.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>How much does a project cost?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Project scope depends on workflow complexity, systems, integrations, and support needs. We discuss your requirements before providing a quote.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>How long does implementation take?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Timing depends on scope, access, data readiness, and testing. We agree a project plan after assessment.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>How are business data and staff oversight handled?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>During planning, we define access, data flows, review points, and human handoffs so responsibilities are clear before implementation.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary><span>What happens after launch?</span><span class="faq-toggle" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Our <a href="managed-ai-automation-support.html">Managed AI &amp; Automation Support</a> service covers monitoring, maintenance, improvements, and team support. Maintenance, monitoring, and support terms are agreed for your project.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+    <!-- END FAQ -->
+
+    <!-- CONSULTATION: shared verified contact destination; no local form -->
+    <section id="consultation" class="consultation section-space" aria-labelledby="consultation-heading">
+      <div class="site-container">
+        <div class="consultation-panel">
+          <div class="consultation-layout">
+            <div class="consultation-copy">
+              <p class="eyebrow consultation-eyebrow">Start with a conversation</p>
+              <h2 id="consultation-heading" class="font-semibold">What Would You Like to <span>Automate?</span></h2>
+              <p class="consultation-description">Tell us which process is taking too much time. We’ll discuss your current workflow, the tools you use, and where automation could help.</p>
+              <a class="button consultation-cta" href="book-consultation.html"><span>Book a Consultation</span><span class="consultation-cta-icon" aria-hidden="true"><svg class="icon"><use href="#rf-icon-arrow-up-right"></use></svg></span></a>
+            </div>
+            <aside class="consultation-agenda" aria-labelledby="consultation-agenda-heading">
+              <div class="consultation-agenda-header"><span class="consultation-agenda-icon" aria-hidden="true"><svg><use href="#rf-icon-messages-square"></use></svg></span><h3 id="consultation-agenda-heading">What we’ll discuss</h3></div>
+              <ul class="consultation-topics">
+                <li><span class="consultation-topic-number" aria-hidden="true">01</span><div><h4>Your process</h4><p>Current steps and repetitive work.</p></div></li>
+                <li><span class="consultation-topic-number" aria-hidden="true">02</span><div><h4>Your existing systems</h4><p>The tools your team uses.</p></div></li>
+                <li><span class="consultation-topic-number" aria-hidden="true">03</span><div><h4>Possible next steps</h4><p>Opportunities to assess together.</p></div></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END CONSULTATION -->
+
+    <!-- FUTURE SECTIONS: verified proof only if supplied.
+         Do not duplicate IDs or create empty section placeholders. -->
+  </main>
+  <!-- END MAIN -->
+
+  <!-- FOOTER: future shared WordPress footer template part -->
+  <footer id="footer" class="site-footer">
+    <div class="site-container footer-shell">
+      <div class="footer-top">
+        <div class="footer-introduction">
+          <a class="footer-brand" href="./" aria-label="Reach First home"><img class="brand-logo" src="assets/images/reach-first-logo-original.jpg" width="500" height="59" alt="Reach First" loading="lazy"></a>
+          <p class="footer-description">Practical AI automation and integrations for growing service businesses.</p>
+          <p class="footer-coverage"><span aria-hidden="true"></span>Serving Canada and the United States.</p>
+        </div>
+        <nav class="footer-contact" aria-labelledby="footer-contact-heading">
+          <h2 id="footer-contact-heading" class="footer-heading">Contact</h2>
+          <ul>
+            <li><a class="footer-link footer-contact-link" href="mailto:info@reachfirst.com"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><span>info@reachfirst.com</span></a></li>
+            <li><a class="footer-link footer-contact-link" href="tel:+18447773224"><svg aria-hidden="true"><use href="#rf-icon-phone"></use></svg><span>1-844-777-3224</span></a></li>
+            <li class="footer-contact-action"><a class="footer-link footer-consultation" href="book-consultation.html">Book a Consultation<svg aria-hidden="true"><use href="#rf-icon-arrow-up-right"></use></svg></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-columns">
+        <nav class="footer-services" aria-labelledby="footer-services-heading">
+          <h2 id="footer-services-heading" class="footer-heading">Services</h2>
+          <ul class="footer-service-list">
+            <li><a class="footer-link" href="ai-consulting-automation-planning.html">AI Consulting &amp; Automation Planning</a></li>
+            <li><a class="footer-link" href="business-workflow-automation.html">Business Workflow Automation</a></li>
+            <li><a class="footer-link" href="sales-crm-automation.html">Sales &amp; CRM Automation</a></li>
+            <li><a class="footer-link" href="ai-agents-customer-support.html">AI Agents &amp; Customer Support</a></li>
+            <li><a class="footer-link" href="ai-voice-agents.html">AI Voice Agents</a></li>
+            <li><a class="footer-link" href="custom-ai-applications-integrations.html">Custom AI Applications &amp; Integrations</a></li>
+            <li><a class="footer-link" href="managed-ai-automation-support.html">Managed AI &amp; Automation Support</a></li>
+            <li><a class="footer-link" href="digital-marketing-services.html">Digital Marketing Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-industries-heading">
+          <h2 id="footer-industries-heading" class="footer-heading">Industries</h2>
+          <ul>
+            <li><a class="footer-link" href="home-field-services.html">Home &amp; Field Services</a></li>
+            <li><a class="footer-link" href="professional-services.html">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="company-heading">
+          <h2 id="company-heading" class="footer-heading">Company</h2>
+          <ul>
+            <li><a class="footer-link" href="about-us.html">About us</a></li>
+            <li><a class="footer-link" href="insights.html">Blogs</a></li>
+            <li><a class="footer-link" href="https://www.linkedin.com/company/reach-first" aria-label="Reach First on LinkedIn">LinkedIn<svg class="footer-external-icon" aria-hidden="true"><use href="#rf-icon-arrow-up-right"></use></svg></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Reach First. All rights reserved.</p>
+        <nav aria-label="Footer legal" class="footer-legal">
+          <a class="footer-link" href="https://www.reachfirst.com/privacy-policy/">Privacy Policy</a>
+          <a class="footer-link" href="https://www.reachfirst.com/terms-of-service/">Terms of Service</a>
+        </nav>
+        <a class="footer-back-top" href="#top">Back to top<span aria-hidden="true"><svg><use href="#rf-icon-arrow-right"></use></svg></span></a>
+      </div>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+</body>
+</html>
