@@ -147,3 +147,7 @@ The 17 Lucide symbols from the existing licensed sprite are also embedded in `in
 ## Jack'd Up Plumbing project mockup
 
 `assets/images/jackd-up-plumbing-logo.png` is the public client logo downloaded from `https://www.jackdupplumbing.ca/wp-content/themes/jackd-plumbing/images/jackd-up-plumbing-logo.png` for the HVAC industry project showcase. The surrounding homepage mockup and AI-assisted workflow are authored HTML/CSS, not a screenshot or copied page. Visible service language is a concise adaptation of the public homepage structure at `https://www.jackdupplumbing.ca/`. No review text, customer identities, analytics, or unsupported performance claims are reproduced.
+
+## Reach First diamond artwork
+
+`assets/images/rf-diamonds-top.png` and `assets/images/rf-diamonds-bottom.png` were supplied by the user from the Reach First brand artwork. They are used only as low-opacity decorative elements in CTA, safeguard, and footer whitespace and are hidden where small-screen space would make them distracting.

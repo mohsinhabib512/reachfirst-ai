@@ -76,9 +76,10 @@
   .nav-link:hover, .footer-link:hover { color: var(--color-brand-strong); text-decoration: underline; }
   .eyebrow { display: flex; align-items: center; gap: 0.625rem; color: var(--color-brand-strong); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
   .eyebrow::before { content: ""; width: 1.5rem; height: 2px; background: var(--color-brand); }
-  .site-footer { position: relative; border-top: 1px solid var(--color-line); background: linear-gradient(180deg, white 40%, #f7fafc); }
+  .site-footer { position: relative; isolation: isolate; overflow: hidden; border-top: 1px solid var(--color-line); background: linear-gradient(180deg, white 40%, #f7fafc); }
   .site-footer::before { content: ""; position: absolute; z-index: 1; left: 50%; top: -4px; width: 7px; height: 7px; border: 1px solid rgb(0 131 198 / 45%); background: white; transform: translateX(-50%) rotate(45deg); pointer-events: none; }
-  .footer-shell { padding-block: 3rem 1.5rem; }
+  .site-footer::after { content: ""; position: absolute; z-index: 0; right: -5rem; bottom: -6.5rem; width: 11rem; aspect-ratio: 611 / 670; background: url("../images/rf-diamonds-bottom.png") center / contain no-repeat; opacity: .055; pointer-events: none; }
+  .footer-shell { position: relative; z-index: 1; padding-block: 3rem 1.5rem; }
   .footer-top { display: grid; align-items: center; gap: 2rem; padding-bottom: 2.5rem; }
   .footer-introduction { min-width: 0; }
   .footer-brand { display: inline-flex; align-items: center; min-height: 44px; background: white; }
@@ -978,6 +979,35 @@
   pointer-events: none;
 }
 
+:is(.services-safeguards, .detail-guardrails, .trade-guardrails, .work-guardrails, .about-belief) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+:is(.services-safeguards, .detail-guardrails, .trade-guardrails, .work-guardrails, .about-belief)::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: -5.5rem;
+  bottom: -7rem;
+  width: clamp(9rem, 12vw, 11rem);
+  aspect-ratio: 611 / 670;
+  background: url("../images/rf-diamonds-bottom.png") center / contain no-repeat;
+  opacity: .045;
+  pointer-events: none;
+}
+:is(.services-safeguards, .detail-guardrails, .trade-guardrails, .work-guardrails, .about-belief) > .site-container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 639px) {
+  .site-footer::after,
+  :is(.services-safeguards, .detail-guardrails, .trade-guardrails, .work-guardrails, .about-belief)::after {
+    display: none;
+  }
+}
+
 /* Book a consultation */
 .consultation-hero { background: radial-gradient(circle at 84% 18%, rgb(73 184 232 / 11%), transparent 25%), linear-gradient(120deg, #fff 8%, #f8fafb 55%, var(--color-tint)); border-bottom: 1px solid var(--color-line); }
 .consultation-hero-grid { display: grid; align-items: start; gap: 3rem; }
@@ -1270,14 +1300,14 @@
 .home-page .consultation-diamonds {
   position: absolute;
   z-index: 0;
-  top: -4.5rem;
-  right: -3.25rem;
   width: clamp(10rem, 13vw, 12.5rem);
   height: auto;
   opacity: .15;
   pointer-events: none;
   user-select: none;
 }
+.home-page .consultation-diamonds-top { top: -5.5rem; right: -5.5rem; width: clamp(8.5rem, 11vw, 10rem); opacity: .11; }
+.home-page .consultation-diamonds-bottom { left: -4.5rem; bottom: -6.5rem; width: clamp(8rem, 11vw, 10rem); opacity: .075; }
 .home-page .consultation-layout { position: relative; z-index: 1; }
 .home-page .consultation-copy h2 > span { color: #d1f2ff; }
 .home-page .consultation-description { color: #e5f3f9; }
@@ -1349,11 +1379,17 @@
 }
 
 @media (max-width: 767px) {
-  .home-page .consultation-diamonds {
-    top: -3.5rem;
-    right: -2.75rem;
-    width: 9rem;
-    opacity: .11;
+  .home-page .consultation-diamonds-top {
+    top: -4.5rem;
+    right: -4.5rem;
+    width: 8rem;
+    opacity: .08;
+  }
+  .home-page .consultation-diamonds-bottom {
+    left: -3.75rem;
+    bottom: -5rem;
+    width: 8rem;
+    opacity: .055;
   }
 }
 
@@ -1971,12 +2007,24 @@
   content: "";
   position: absolute;
   z-index: 0;
-  top: -4.5rem;
-  right: -3.25rem;
-  width: clamp(10rem, 13vw, 12.5rem);
+  top: -5.5rem;
+  right: -5.5rem;
+  width: clamp(8.5rem, 11vw, 10rem);
   aspect-ratio: 557 / 604;
   background: url("../images/rf-diamonds-top.png") center / contain no-repeat;
-  opacity: .15;
+  opacity: .11;
+  pointer-events: none;
+}
+.about-cta::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: -4.5rem;
+  bottom: -6.5rem;
+  width: clamp(8rem, 11vw, 10rem);
+  aspect-ratio: 611 / 670;
+  background: url("../images/rf-diamonds-bottom.png") center / contain no-repeat;
+  opacity: .075;
   pointer-events: none;
 }
 .about-cta > .site-container { position: relative; z-index: 1; }
@@ -1990,15 +2038,16 @@
 
 @media (max-width: 767px) {
   .about-cta::after {
-    top: -3.5rem;
-    right: -2.75rem;
-    width: 9rem;
-    opacity: .11;
+    top: -4.5rem;
+    right: -4.5rem;
+    width: 8rem;
+    opacity: .08;
   }
+  .about-cta::before { left: -4rem; bottom: -5rem; width: 8rem; opacity: .055; }
 }
 
 @media (max-width: 479px) {
-  .about-cta::after { display: none; }
+  .about-cta::before, .about-cta::after { display: none; }
 }
 
 @media (min-width: 640px) {
