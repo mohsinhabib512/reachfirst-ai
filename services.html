@@ -9,7 +9,10 @@
   <link rel="icon" href="assets/icons/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/manrope-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/vendor/gsap/gsap.min.js" defer></script>
+  <script src="assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/services-delivery.js" defer></script>
 </head>
 <body id="top">
   <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false"><defs>
@@ -48,10 +51,17 @@
           <p>Reach First connects AI automation, custom technology, and digital marketing around two outcomes: running the business more effectively and reaching the right customers.</p>
           <div class="services-page-actions"><a class="button button-primary" href="book-consultation.html">Discuss your goals<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-up-right"></use></svg></a><a class="services-page-text-link" href="#service-catalog">Explore services<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a></div>
         </div>
-        <div class="services-page-map" aria-label="Plan, automate, connect, and improve">
-          <div class="service-map-hub"><svg aria-hidden="true"><use href="#rf-icon-workflow"></use></svg><span>Your workflow</span></div>
-          <div class="service-map-node service-map-plan"><small>01</small><strong>Plan</strong></div><div class="service-map-node service-map-automate"><small>02</small><strong>Automate</strong></div><div class="service-map-node service-map-connect"><small>03</small><strong>Connect</strong></div><div class="service-map-node service-map-support"><small>04</small><strong>Improve</strong></div>
-          <svg class="service-map-lines" viewBox="0 0 500 360" aria-hidden="true"><path d="M250 180 116 88M250 180 384 88M250 180 116 276M250 180 384 276"/></svg>
+        <div class="services-page-map" role="img" aria-label="A connected Reach First delivery system moving through planning, automation, integration, and improvement">
+          <div class="service-system-toolbar" aria-hidden="true"><span><i></i><i></i><i></i></span><strong>Connected delivery system</strong><em>Live coordination</em></div>
+          <div class="service-system-stage" aria-hidden="true">
+            <svg class="service-map-lines" viewBox="0 0 540 360" preserveAspectRatio="none"><defs><linearGradient id="service-line-gradient" x1="0" x2="1"><stop stop-color="#8bc9e6"/><stop offset=".5" stop-color="#0083c6"/><stop offset="1" stop-color="#8bc9e6"/></linearGradient></defs><path d="M270 180C220 180 196 104 126 92M270 180C320 180 344 104 414 92M270 180C220 180 196 256 126 268M270 180C320 180 344 256 414 268"/><circle cx="126" cy="92" r="3"/><circle cx="414" cy="92" r="3"/><circle cx="126" cy="268" r="3"/><circle cx="414" cy="268" r="3"/></svg>
+            <div class="service-system-core" aria-hidden="true"><span class="service-core-ring"></span><div><span class="service-core-content"><img src="assets/images/reach-first-r-mark.png" width="500" height="500" alt=""></span></div></div>
+            <div class="service-map-node service-map-plan"><span><svg><use href="#rf-icon-route"></use></svg></span><div><small>01 · Discover</small><strong>Plan</strong><em>Priorities mapped</em></div></div>
+            <div class="service-map-node service-map-automate"><span><svg><use href="#rf-icon-settings"></use></svg></span><div><small>02 · Build</small><strong>Automate</strong><em>Work moves forward</em></div></div>
+            <div class="service-map-node service-map-connect"><span><svg><use href="#rf-icon-blocks"></use></svg></span><div><small>03 · Integrate</small><strong>Connect</strong><em>Tools work together</em></div></div>
+            <div class="service-map-node service-map-support"><span><svg><use href="#rf-icon-shield"></use></svg></span><div><small>04 · Refine</small><strong>Improve</strong><em>People stay involved</em></div></div>
+          </div>
+          <div class="service-system-status" aria-hidden="true"><span><i></i>System path active</span><span>Plan&nbsp;&nbsp;→&nbsp;&nbsp;Build&nbsp;&nbsp;→&nbsp;&nbsp;Improve</span></div>
         </div>
       </div>
     </section>
@@ -84,7 +94,62 @@
       </div>
     </section>
 
-    <section class="services-delivery section-space" aria-labelledby="delivery-heading"><div class="site-container"><div class="services-delivery-layout"><div><p class="eyebrow">One delivery path</p><h2 id="delivery-heading">A focused route from opportunity to measurable progress.</h2><p>Service combinations vary, but the work follows a clear sequence.</p><a class="services-page-text-link" href="how-we-work.html">More about how we work<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a></div><ol><li><span>01</span><div><h3>Assess</h3><p>Understand the business, audience, systems, priorities, and constraints.</p></div></li><li><span>02</span><div><h3>Plan</h3><p>Define a focused use case or channel plan and how it will be evaluated.</p></div></li><li><span>03</span><div><h3>Implement</h3><p>Build the workflow, campaign, integration, or digital experience.</p></div></li><li><span>04</span><div><h3>Launch</h3><p>Test, prepare the team, and put the agreed plan into use.</p></div></li><li><span>05</span><div><h3>Improve</h3><p>Review performance and make evidence-informed improvements.</p></div></li></ol></div></div></section>
+    <section class="services-delivery section-space" aria-labelledby="delivery-heading" data-delivery-section>
+      <div class="site-container services-delivery-layout">
+        <div class="delivery-intro">
+          <p class="eyebrow">One delivery path</p>
+          <h2 id="delivery-heading">A focused route from opportunity to measurable progress.</h2>
+          <p>Service combinations vary, but the work follows a clear sequence.</p>
+          <div class="delivery-overview" aria-hidden="true"><span>01</span><i></i><span>05</span><small>Connected stages</small></div>
+          <a class="services-page-text-link" href="how-we-work.html">More about how we work<svg class="icon" aria-hidden="true"><use href="#rf-icon-arrow-right"></use></svg></a>
+        </div>
+        <div class="delivery-process" data-delivery-process>
+          <div class="delivery-rail" aria-hidden="true"><span data-delivery-progress></span></div>
+          <ol>
+            <li class="delivery-step" data-delivery-step>
+              <div class="delivery-marker" aria-hidden="true"><span>01</span></div>
+              <div class="delivery-card">
+                <div class="delivery-card-top"><span class="delivery-icon" aria-hidden="true"><svg><use href="#rf-icon-route"></use></svg></span><span>Discover</span></div>
+                <h3>Assess</h3>
+                <p>Understand the business, audience, systems, priorities, and constraints.</p>
+              </div>
+            </li>
+            <li class="delivery-step" data-delivery-step>
+              <div class="delivery-marker" aria-hidden="true"><span>02</span></div>
+              <div class="delivery-card">
+                <div class="delivery-card-top"><span class="delivery-icon" aria-hidden="true"><svg><use href="#rf-icon-contact"></use></svg></span><span>Define</span></div>
+                <h3>Plan</h3>
+                <p>Define a focused use case or channel plan and how it will be evaluated.</p>
+              </div>
+            </li>
+            <li class="delivery-step" data-delivery-step>
+              <div class="delivery-marker" aria-hidden="true"><span>03</span></div>
+              <div class="delivery-card">
+                <div class="delivery-card-top"><span class="delivery-icon" aria-hidden="true"><svg><use href="#rf-icon-blocks"></use></svg></span><span>Build</span></div>
+                <h3>Implement</h3>
+                <p>Build the workflow, campaign, integration, or digital experience.</p>
+              </div>
+            </li>
+            <li class="delivery-step" data-delivery-step>
+              <div class="delivery-marker" aria-hidden="true"><span>04</span></div>
+              <div class="delivery-card">
+                <div class="delivery-card-top"><span class="delivery-icon" aria-hidden="true"><svg><use href="#rf-icon-arrow-up-right"></use></svg></span><span>Enable</span></div>
+                <h3>Launch</h3>
+                <p>Test, prepare the team, and put the agreed plan into use.</p>
+              </div>
+            </li>
+            <li class="delivery-step" data-delivery-step>
+              <div class="delivery-marker" aria-hidden="true"><span>05</span></div>
+              <div class="delivery-card">
+                <div class="delivery-card-top"><span class="delivery-icon" aria-hidden="true"><svg><use href="#rf-icon-settings"></use></svg></span><span>Refine</span></div>
+                <h3>Improve</h3>
+                <p>Review performance and make evidence-informed improvements.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
 
     <section class="services-safeguards section-space" aria-labelledby="safeguards-heading"><div class="site-container services-safeguards-layout"><div class="services-safeguards-mark" aria-hidden="true"><svg><use href="#rf-icon-shield"></use></svg></div><div><p class="eyebrow">Designed for accountable work</p><h2 id="safeguards-heading">Clear boundaries, responsible execution, and useful measurement.</h2></div><div class="services-safeguards-copy"><p>Automation projects define permissions, staff review, and exception handling. Marketing programs define audiences, approvals, claims, channels, and the indicators used to evaluate progress.</p><p>Recommendations depend on the systems, market, available data, access, budget, and operational constraints involved. We assess those conditions before proposing the work.</p></div></div></section>
 

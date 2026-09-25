@@ -1,47 +1,200 @@
 // Native disclosures remain operable by touch and keyboard without JavaScript.
+// Add one quiet, decorative brand signature to internal-page heroes. The
+// homepage hero intentionally stays clear so its existing infographic remains
+// the sole focal point.
+if (!document.body.classList.contains('home-page')) {
+  const pageHero = document.querySelector('main > section:first-of-type');
+
+  if (pageHero && !pageHero.querySelector(':scope > .rf-page-diamonds')) {
+    pageHero.classList.add('rf-diamond-edge-host');
+
+    const diamonds = document.createElement('img');
+    diamonds.className = 'rf-page-diamonds';
+    diamonds.src = 'assets/images/rf-diamonds-top.png';
+    diamonds.width = 557;
+    diamonds.height = 604;
+    diamonds.alt = '';
+    diamonds.decoding = 'async';
+    diamonds.setAttribute('aria-hidden', 'true');
+    pageHero.append(diamonds);
+  }
+}
+
+// Reuse the homepage conversation panel as the consistent final call to action
+// on every inner page. The booking page is intentionally excluded so it does
+// not end with a link back to the form the visitor is already using.
+const isSharedConsultationPage = !document.body.classList.contains('home-page')
+  && !document.body.classList.contains('consultation-page');
+
+if (isSharedConsultationPage) {
+  const main = document.querySelector('main');
+
+  if (main) {
+    const sharedConsultation = document.createElement('section');
+    sharedConsultation.className = 'consultation shared-consultation section-space';
+    sharedConsultation.setAttribute('aria-labelledby', 'inner-consultation-heading');
+    sharedConsultation.innerHTML = `
+      <div class="site-container">
+        <div class="consultation-panel">
+          <img class="consultation-diamonds consultation-diamonds-top" src="assets/images/rf-diamonds-top.png" width="557" height="604" loading="lazy" decoding="async" alt="" aria-hidden="true">
+          <img class="consultation-diamonds consultation-diamonds-bottom" src="assets/images/rf-diamonds-bottom.png" width="611" height="670" loading="lazy" decoding="async" alt="" aria-hidden="true">
+          <div class="consultation-layout">
+            <div class="consultation-copy">
+              <p class="eyebrow consultation-eyebrow">Start with a conversation</p>
+              <h2 id="inner-consultation-heading" class="font-semibold">What Would You Like to <span>Automate?</span></h2>
+              <p class="consultation-description">Tell us which process is taking too much time. We’ll discuss your current workflow, the tools you use, and where automation could help.</p>
+              <a class="button consultation-cta" href="book-consultation.html"><span>Book AI Consultation</span><span class="consultation-cta-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            </div>
+            <aside class="consultation-agenda" aria-labelledby="inner-consultation-agenda-heading">
+              <div class="consultation-agenda-header"><span class="consultation-agenda-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8M8 13h5"/></svg></span><h3 id="inner-consultation-agenda-heading">What we’ll discuss</h3></div>
+              <ul class="consultation-topics">
+                <li><span class="consultation-topic-number" aria-hidden="true">01</span><div><h4>Your process</h4><p>Current steps and repetitive work.</p></div></li>
+                <li><span class="consultation-topic-number" aria-hidden="true">02</span><div><h4>Your existing systems</h4><p>The tools your team uses.</p></div></li>
+                <li><span class="consultation-topic-number" aria-hidden="true">03</span><div><h4>Possible next steps</h4><p>Opportunities to assess together.</p></div></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </div>`;
+
+    const existingFinalCta = main.querySelector(':scope > .about-cta');
+    if (existingFinalCta) existingFinalCta.replaceWith(sharedConsultation);
+    else main.append(sharedConsultation);
+    document.body.classList.add('has-shared-consultation');
+  }
+}
+
+// Keep one consistent, reference-led footer structure across every page while
+// retaining Reach First content, destinations, and brand identity.
+const siteFooter = document.querySelector('.site-footer');
+if (siteFooter) {
+  const footerArrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>';
+  siteFooter.innerHTML = `
+    <div class="site-container footer-shell">
+      <div class="footer-panel">
+        <div class="footer-main">
+          <div class="footer-introduction">
+            <a class="footer-brand" href="./" aria-label="Reach First home"><img class="brand-logo" src="assets/images/reach-first-logo-original.jpg" width="500" height="59" alt="Reach First" loading="lazy"></a>
+            <p class="footer-tagline">AI automation for growing service businesses.</p>
+            <p class="footer-description">Practical automation, connected technology, and digital growth support built around the way your business works.</p>
+            <div class="footer-contact-compact">
+              <a href="mailto:info@reachfirst.com">info@reachfirst.com</a>
+              <a href="tel:+18447773224">1-844-777-3224</a>
+            </div>
+            <p class="footer-coverage"><span aria-hidden="true"></span>Serving Canada and the United States.</p>
+          </div>
+          <nav class="footer-column" aria-labelledby="footer-automation-heading">
+            <h2 id="footer-automation-heading" class="footer-heading">Automation services</h2>
+            <ul>
+              <li><a class="footer-link" href="ai-consulting-automation-planning.html">AI Consulting &amp; Planning</a></li>
+              <li><a class="footer-link" href="business-workflow-automation.html">Workflow Automation</a></li>
+              <li><a class="footer-link" href="sales-crm-automation.html">Sales &amp; CRM Automation</a></li>
+              <li><a class="footer-link" href="ai-agents-customer-support.html">AI Agents &amp; Support</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-column" aria-labelledby="footer-build-heading">
+            <h2 id="footer-build-heading" class="footer-heading">Build &amp; grow</h2>
+            <ul>
+              <li><a class="footer-link" href="ai-voice-agents.html">AI Voice Agents</a></li>
+              <li><a class="footer-link" href="custom-ai-applications-integrations.html">Custom AI Applications</a></li>
+              <li><a class="footer-link" href="managed-ai-automation-support.html">Managed AI Support</a></li>
+              <li><a class="footer-link" href="digital-marketing-services.html">Digital Marketing</a></li>
+              <li><a class="footer-link footer-view-all" href="services.html">View all services ${footerArrow}</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-column" aria-labelledby="footer-industries-heading">
+            <h2 id="footer-industries-heading" class="footer-heading">Industries</h2>
+            <ul>
+              <li><a class="footer-link" href="home-field-services.html">Home &amp; Field Services</a></li>
+              <li><a class="footer-link" href="professional-services.html">Professional Services</a></li>
+              <li><a class="footer-link" href="industries.html">All industries</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-column" aria-labelledby="footer-company-heading">
+            <h2 id="footer-company-heading" class="footer-heading">Company</h2>
+            <ul>
+              <li><a class="footer-link" href="about-us.html">About us</a></li>
+              <li><a class="footer-link" href="how-we-work.html">How We Work</a></li>
+              <li><a class="footer-link" href="case-studies.html">Case Studies</a></li>
+              <li><a class="footer-link" href="insights.html">Blogs</a></li>
+              <li><a class="footer-link" href="https://www.linkedin.com/company/reach-first">LinkedIn ${footerArrow}</a></li>
+            </ul>
+            <a class="footer-consultation-link" href="book-consultation.html">Book AI Consultation ${footerArrow}</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Reach First</p>
+          <nav class="footer-legal" aria-label="Footer legal"><a href="https://www.reachfirst.com/privacy-policy/">Privacy</a><a href="https://www.reachfirst.com/terms-of-service/">Terms</a></nav>
+          <a class="footer-back-top" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
+        </div>
+      </div>
+    </div>`;
+}
+
 const header = document.querySelector('[data-site-header]');
 if (header) {
+  header.querySelectorAll('a[href$="about-us.html"]').forEach((link) => {
+    link.textContent = 'About us';
+  });
+  const navIcons = {
+    workflow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/><path d="M6.5 10v4a3.5 3.5 0 0 0 3.5 3.5h4"/></svg>',
+    crm: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0M16 8h5m-2.5-2.5V10.5M16.5 15.5l1.5 1.5 3-3"/></svg>',
+    agent: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="13" rx="3"/><path d="M9 11h.01M15 11h.01M9 15h6M12 6V3M9 3h6"/></svg>',
+    marketing: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 14-6v14L3 13zM17 9a4 4 0 0 1 0 6M6 14l1.5 6h4L10 13"/></svg>',
+    planning: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>',
+    voice: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg>',
+    custom: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg>',
+    support: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3z"/><path d="m9 12 2 2 4-4"/></svg>',
+    field: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10H8v-6h8v6M18.5 5.5l2-2"/></svg>',
+    professional: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2"/></svg>',
+    industries: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>'
+  };
+  const navIcon = (name) => `<span class="nav-icon-tile" aria-hidden="true">${navIcons[name]}</span>`;
   const menuDefinitions = {
     services: {
       label: 'Services',
       href: 'services.html',
       desktopContent: `
+        <div class="nav-services-heading"><span>Connected capabilities</span><small>Plan, automate, connect, support, and grow your business.</small></div>
         <div class="nav-mega-groups">
           <div><p class="nav-group-label">Automate everyday work</p><ul>
-            <li><a href="business-workflow-automation.html"><span>Business Workflow Automation<small>Connect tasks, approvals, and systems.</small></span></a></li>
-            <li><a href="sales-crm-automation.html"><span>Sales &amp; CRM Automation<small>Coordinate enquiries and follow-ups.</small></span></a></li>
-            <li><a href="ai-agents-customer-support.html"><span>AI Agents &amp; Customer Support<small>Assist customers with staff handoffs.</small></span></a></li>
-            <li><a href="digital-marketing-services.html"><span>Digital Marketing Services<small>Build visibility, demand, and measurable growth.</small></span></a></li>
+            <li><a href="business-workflow-automation.html">${navIcon('workflow')}<span>Business Workflow Automation<small>Connect tasks, approvals, and systems.</small></span></a></li>
+            <li><a href="sales-crm-automation.html">${navIcon('crm')}<span>Sales &amp; CRM Automation<small>Coordinate enquiries and follow-ups.</small></span></a></li>
+            <li><a href="ai-agents-customer-support.html">${navIcon('agent')}<span>AI Agents &amp; Customer Support<small>Assist customers with staff handoffs.</small></span></a></li>
+            <li><a href="managed-ai-automation-support.html">${navIcon('support')}<span>Managed AI &amp; Automation Support<small>Maintain and improve your implementation.</small></span></a></li>
           </ul></div>
           <div><p class="nav-group-label">Plan, build, and support</p><ul>
-            <li><a href="ai-consulting-automation-planning.html"><span>AI Consulting &amp; Automation Planning<small>Find opportunities and define a roadmap.</small></span></a></li>
-            <li><a href="ai-voice-agents.html"><span>AI Voice Agents<small>Handle enquiries and appointment requests.</small></span></a></li>
-            <li><a href="custom-ai-applications-integrations.html"><span>Custom AI Applications &amp; Integrations<small>Build tools around your workflow.</small></span></a></li>
-            <li><a href="managed-ai-automation-support.html"><span>Managed AI &amp; Automation Support<small>Maintain and improve your implementation.</small></span></a></li>
+            <li><a href="ai-consulting-automation-planning.html">${navIcon('planning')}<span>AI Consulting &amp; Automation Planning<small>Find opportunities and define a roadmap.</small></span></a></li>
+            <li><a href="ai-voice-agents.html">${navIcon('voice')}<span>AI Voice Agents<small>Handle enquiries and appointment requests.</small></span></a></li>
+            <li><a href="custom-ai-applications-integrations.html">${navIcon('custom')}<span>Custom AI Applications &amp; Integrations<small>Build tools around your workflow.</small></span></a></li>
+            <li><a href="digital-marketing-services.html">${navIcon('marketing')}<span>Digital Marketing Services<small>Build visibility, demand, and measurable growth.</small></span></a></li>
           </ul></div>
         </div>
-        <div class="nav-mega-footer"><span>Start with the work you want to simplify.</span><a href="services.html">Explore all services <span aria-hidden="true">&rarr;</span></a></div>`,
+        <div class="nav-mega-footer"><span>Start with the work you want to simplify.</span><a href="services.html">Explore all services <span class="nav-footer-arrow" aria-hidden="true">&rarr;</span></a></div>`,
       mobileContent: `
-        <li><a href="ai-consulting-automation-planning.html">AI Consulting &amp; Automation Planning</a></li>
-        <li><a href="business-workflow-automation.html">Business Workflow Automation</a></li>
-        <li><a href="sales-crm-automation.html">Sales &amp; CRM Automation</a></li>
-        <li><a href="ai-agents-customer-support.html">AI Agents &amp; Customer Support</a></li>
-        <li><a href="ai-voice-agents.html">AI Voice Agents</a></li>
-        <li><a href="custom-ai-applications-integrations.html">Custom AI Applications &amp; Integrations</a></li>
-        <li><a href="managed-ai-automation-support.html">Managed AI &amp; Automation Support</a></li>
-        <li><a href="digital-marketing-services.html">Digital Marketing Services</a></li>`
+        <li><a href="ai-consulting-automation-planning.html">${navIcon('planning')}<span>AI Consulting &amp; Automation Planning</span></a></li>
+        <li><a href="business-workflow-automation.html">${navIcon('workflow')}<span>Business Workflow Automation</span></a></li>
+        <li><a href="sales-crm-automation.html">${navIcon('crm')}<span>Sales &amp; CRM Automation</span></a></li>
+        <li><a href="ai-agents-customer-support.html">${navIcon('agent')}<span>AI Agents &amp; Customer Support</span></a></li>
+        <li><a href="ai-voice-agents.html">${navIcon('voice')}<span>AI Voice Agents</span></a></li>
+        <li><a href="custom-ai-applications-integrations.html">${navIcon('custom')}<span>Custom AI Applications &amp; Integrations</span></a></li>
+        <li><a href="managed-ai-automation-support.html">${navIcon('support')}<span>Managed AI &amp; Automation Support</span></a></li>
+        <li><a href="digital-marketing-services.html">${navIcon('marketing')}<span>Digital Marketing Services</span></a></li>`
     },
     industries: {
       label: 'Industries',
       href: 'industries.html',
       desktopContent: `
-        <li><a href="home-field-services.html"><span>Home &amp; Field Services<small>Enquiries, appointments, and quote follow-ups.</small></span></a></li>
-        <li><a href="professional-services.html"><span>Professional Services<small>Onboarding, documents, and team knowledge.</small></span></a></li>
-        <li><a href="industries.html"><span>Explore all industries<small>See audiences, workflows, and relevant services.</small></span></a></li>`,
+        <div class="nav-industries-heading"><span>Built around your operation</span><small>Explore connected systems for service businesses.</small></div>
+        <ul class="nav-industries-list">
+          <li><a href="home-field-services.html">${navIcon('field')}<span>Home &amp; Field Services<small>Enquiries, appointments, and quote follow-ups.</small></span></a></li>
+          <li><a href="professional-services.html">${navIcon('professional')}<span>Professional Services<small>Onboarding, documents, and team knowledge.</small></span></a></li>
+        </ul>
+        <div class="nav-industries-footer"><a href="industries.html">${navIcon('industries')}<span>Explore all industries<small>See audiences, workflows, and relevant services.</small></span><span class="nav-footer-arrow" aria-hidden="true">&rarr;</span></a></div>`,
       mobileContent: `
-        <li><a href="home-field-services.html">Home &amp; Field Services</a></li>
-        <li><a href="professional-services.html">Professional Services</a></li>
-        <li><a href="industries.html">Explore all industries</a></li>`
+        <li><a href="home-field-services.html">${navIcon('field')}<span>Home &amp; Field Services</span></a></li>
+        <li><a href="professional-services.html">${navIcon('professional')}<span>Professional Services</span></a></li>
+        <li><a href="industries.html">${navIcon('industries')}<span>Explore all industries</span></a></li>`
     }
   };
   const chevron = '<svg class="icon chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
@@ -53,9 +206,9 @@ if (header) {
     if (!source) return;
     const oldSummary = existingDetails?.querySelector(':scope > summary');
     const isCurrent = source.dataset.current === 'true' || source.classList.contains('is-current') || oldSummary?.classList.contains('is-current');
-    const dropdown = existingDetails?.querySelector(':scope > .nav-dropdown') || document.createElement(mobileMenu ? 'ul' : key === 'services' ? 'div' : 'ul');
-    dropdown.className = `nav-dropdown${!mobileMenu && key === 'services' ? ' nav-mega' : ''}`;
-    dropdown.innerHTML = existingDetails ? dropdown.innerHTML : mobileMenu ? definition.mobileContent : definition.desktopContent;
+    const dropdown = document.createElement(mobileMenu ? 'ul' : 'div');
+    dropdown.className = `nav-dropdown${!mobileMenu && key === 'services' ? ' nav-mega' : ''}${!mobileMenu && key === 'industries' ? ' nav-industries' : ''}`;
+    dropdown.innerHTML = mobileMenu ? definition.mobileContent : definition.desktopContent;
     dropdown.id = `${mobileMenu ? 'mobile' : 'desktop'}-${key}`;
     const wrapper = document.createElement('div');
     wrapper.className = 'nav-menu';
@@ -78,6 +231,11 @@ if (header) {
   };
   const desktopNavigation = header.querySelector('.desktop-nav');
   const mobileNavigation = header.querySelector('.mobile-nav-panel');
+  const desktopCta = desktopNavigation?.querySelector(':scope > .button');
+  if (desktopCta) {
+    desktopCta.classList.add('header-cta');
+    header.querySelector('.header-row')?.append(desktopCta);
+  }
   Object.keys(menuDefinitions).forEach((key) => {
     prepareMenu(desktopNavigation, key, false);
     prepareMenu(mobileNavigation, key, true);
@@ -109,7 +267,7 @@ if (header) {
   const drawer = document.querySelector('#mobile-drawer');
   const mobilePanel = mobile.querySelector('nav');
   const desktopQuery = matchMedia('(min-width: 1200px)');
-  const useDrawer = typeof drawer.showModal === 'function';
+  const useDrawer = Boolean(drawer && typeof drawer.showModal === 'function');
   if (useDrawer) {
     drawer.append(mobilePanel);
     trigger.setAttribute('aria-controls', drawer.id);

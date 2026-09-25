@@ -16,5 +16,8 @@
     "@tailwindcss/cli": "4.3.3",
     "lucide-static": "1.47.0",
     "tailwindcss": "4.3.3"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0"
   }
 }
