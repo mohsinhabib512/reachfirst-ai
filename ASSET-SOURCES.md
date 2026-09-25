@@ -143,3 +143,7 @@ The original Reach First JPEG is unchanged, shown on white at its intrinsic 500:
 ## ZIP preview compatibility
 
 The 17 Lucide symbols from the existing licensed sprite are also embedded in `index.html` using the `rf-icon-` ID prefix, so repeated icons use same-document references. Geometry and licensing are unchanged. The hero orbit mask is encoded unchanged as a data URL in `src/styles.css`; the original SVG is retained as its editable reference. This removes external SVG resource requests from local-file icon and mask rendering.
+
+## Jack'd Up Plumbing project mockup
+
+`assets/images/jackd-up-plumbing-logo.png` is the public client logo downloaded from `https://www.jackdupplumbing.ca/wp-content/themes/jackd-plumbing/images/jackd-up-plumbing-logo.png` for the HVAC industry project showcase. The surrounding homepage mockup and AI-assisted workflow are authored HTML/CSS, not a screenshot or copied page. Visible service language is a concise adaptation of the public homepage structure at `https://www.jackdupplumbing.ca/`. No review text, customer identities, analytics, or unsupported performance claims are reproduced.
