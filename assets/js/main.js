@@ -125,7 +125,7 @@ if (siteFooter) {
         </div>
         <div class="footer-bottom">
           <p>&copy; 2026 Reach First</p>
-          <nav class="footer-legal" aria-label="Footer legal"><a href="https://www.reachfirst.com/privacy-policy/">Privacy</a><a href="https://www.reachfirst.com/terms-of-service/">Terms</a></nav>
+          <nav class="footer-legal" aria-label="Footer legal"><a href="privacy-policy.html">Privacy</a><a href="terms-conditions.html">Terms</a></nav>
           <a class="footer-back-top" href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
         </div>
       </div>
