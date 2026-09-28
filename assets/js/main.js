@@ -117,6 +117,7 @@ if (siteFooter) {
               <li><a class="footer-link" href="how-we-work.html">How We Work</a></li>
               <li><a class="footer-link" href="case-studies.html">Case Studies</a></li>
               <li><a class="footer-link" href="insights.html">Blogs</a></li>
+              <li><a class="footer-link" href="faq.html">FAQs</a></li>
               <li><a class="footer-link" href="https://www.linkedin.com/company/reach-first">LinkedIn ${footerArrow}</a></li>
             </ul>
             <a class="footer-consultation-link" href="book-consultation.html">Book AI Consultation ${footerArrow}</a>
@@ -130,6 +131,17 @@ if (siteFooter) {
       </div>
     </div>`;
 }
+
+// Keep each FAQ topic easy to scan by allowing one expanded answer per group.
+document.querySelectorAll('.faq-page-list').forEach((list) => {
+  const questions = [...list.querySelectorAll(':scope > details')];
+  questions.forEach((question) => {
+    question.addEventListener('toggle', () => {
+      if (!question.open) return;
+      questions.filter((other) => other !== question && other.open).forEach((other) => { other.open = false; });
+    });
+  });
+});
 
 const header = document.querySelector('[data-site-header]');
 if (header) {

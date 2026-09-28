@@ -10,7 +10,7 @@ createServer(async (req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     const file = resolve(root, `.${pathname === '/' ? '/index.html' : pathname}`);
     const relative = file.slice(root.length + 1).split(sep).join('/');
-    const htmlPages = ['index.html', 'about-us.html', 'services.html', 'industries.html', 'home-field-services.html', 'professional-services.html', 'case-studies.html', 'insights.html', 'how-we-work.html', 'book-consultation.html', 'ai-consulting-automation-planning.html', 'business-workflow-automation.html', 'sales-crm-automation.html', 'ai-agents-customer-support.html', 'ai-voice-agents.html', 'custom-ai-applications-integrations.html', 'managed-ai-automation-support.html', 'digital-marketing-services.html'];
+    const htmlPages = ['index.html', 'about-us.html', 'services.html', 'industries.html', 'home-field-services.html', 'professional-services.html', 'case-studies.html', 'insights.html', 'how-we-work.html', 'book-consultation.html', 'faq.html', 'ai-consulting-automation-planning.html', 'business-workflow-automation.html', 'sales-crm-automation.html', 'ai-agents-customer-support.html', 'ai-voice-agents.html', 'custom-ai-applications-integrations.html', 'managed-ai-automation-support.html', 'digital-marketing-services.html'];
     const isIndustryDetail = /^[a-z-]+-industry\.html$/.test(relative);
     if (!file.startsWith(root + sep) || !(htmlPages.includes(relative) || isIndustryDetail || relative.startsWith('assets/'))) {
       res.writeHead(404).end('Not found');
