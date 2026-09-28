@@ -372,13 +372,13 @@ if (header) {
       event.preventDefault();
       close(open);
       summary(open).focus();
-    } else if (drawer.open) {
+    } else if (drawer?.open) {
       event.preventDefault();
       dismissDrawer();
     }
   };
   header.addEventListener('keydown', onEscape);
-  drawer.addEventListener('keydown', onEscape);
+  drawer?.addEventListener('keydown', onEscape);
   const onNavigate = (event) => {
     const link = event.target.closest('a');
     if (!link) return;
@@ -394,7 +394,7 @@ if (header) {
     }
   };
   header.addEventListener('click', onNavigate);
-  drawer.addEventListener('click', onNavigate);
+  drawer?.addEventListener('click', onNavigate);
   document.addEventListener('click', (event) => {
     if (useDrawer && (drawer.open || mobile.contains(event.target))) return;
     disclosures.filter((details) => details.open && !details.contains(event.target)).forEach(close);
@@ -407,7 +407,7 @@ if (header) {
     });
   });
   desktopQuery.addEventListener('change', () => {
-    const focused = header.contains(document.activeElement) || drawer.contains(document.activeElement);
+    const focused = header.contains(document.activeElement) || drawer?.contains(document.activeElement);
     dismissDrawer(false);
     disclosures.forEach(close);
     navMenus.forEach(closeMenu);
@@ -523,6 +523,170 @@ if (serviceDetailVisual) {
       readoutNumber.textContent = node.querySelector('span').textContent;
       readoutTitle.textContent = node.querySelector('strong').textContent;
       readoutCopy.textContent = node.dataset.description;
+    };
+    nodes.forEach((node) => {
+      node.addEventListener('click', () => selectNode(node));
+      node.addEventListener('focus', () => selectNode(node));
+      node.addEventListener('pointerenter', (event) => { if (event.pointerType === 'mouse') selectNode(node); });
+    });
+    selectNode(nodes[0]);
+  }
+}
+
+// Industry-specific hero infographics for the Home & Field Services detail pages.
+const industryHeroVisual = document.querySelector('.trade-hero .trade-hero-board');
+if (industryHeroVisual) {
+  const pageName = location.pathname.split('/').pop() || '';
+  const industryVisuals = {
+    'hvac-industry.html': {
+      variant: 'hvac', kicker: 'Climate operations', title: 'Comfort control', signal: 'System balanced',
+      icon: '<path d="M12 3v18M5.6 6.7l12.8 10.6M5.6 17.3 18.4 6.7"/><circle cx="12" cy="12" r="3.2"/>',
+      nodes: [['01','Request','Capture the comfort issue, property details, and service priority.'],['02','Diagnose','Organize symptoms and equipment information for the technician.'],['03','Schedule','Match the job to the right availability and service window.'],['04','Follow up','Keep the customer informed from booking through completion.']]
+    },
+    'plumbing-industry.html': {
+      variant: 'plumbing', kicker: 'Service flow', title: 'Response pipeline', signal: 'Crew routed',
+      icon: '<path d="M4 5h8v5a4 4 0 0 0 4 4h4M7 2v6M4 18h7v3M17 11v6M20 11v6"/><circle cx="14.5" cy="18" r="1.5"/>',
+      nodes: [['01','Issue','Collect the plumbing problem and urgency in a structured request.'],['02','Triage','Separate routine work from time-sensitive service needs.'],['03','Dispatch','Route the job details to the appropriate team member.'],['04','Update','Share clear booking and service-status information.']]
+    },
+    'electrical-industry.html': {
+      variant: 'electrical', kicker: 'Connected service', title: 'Power workflow', signal: 'Circuit ready',
+      icon: '<path d="m13 2-7 11h6l-1 9 7-12h-6l1-8Z"/><path d="M4 5h3M17 19h3"/>',
+      nodes: [['01','Enquiry','Capture the project type, site details, and requested timing.'],['02','Scope','Organize load, access, and service information for review.'],['03','Assign','Direct the work to the right electrician or project queue.'],['04','Confirm','Keep approvals, scheduling, and completion steps visible.']]
+    },
+    'roofing-industry.html': {
+      variant: 'roofing', kicker: 'Project visibility', title: 'Roofing pipeline', signal: 'Estimate prepared',
+      icon: '<path d="m3 12 9-8 9 8M6 10v10h12V10M9 20v-6h6v6"/><path d="m5 13 7-6 7 6"/>',
+      nodes: [['01','Lead','Capture property, roof, and service-request details.'],['02','Inspect','Coordinate assessment information and site availability.'],['03','Estimate','Prepare a consistent handoff for pricing and approval.'],['04','Project','Track scheduling and customer communication through the job.']]
+    },
+    'towing-industry.html': {
+      variant: 'towing', kicker: 'Live dispatch', title: 'Roadside response', signal: 'Driver en route',
+      icon: '<path d="M3 16h18M5 16l1.5-6h8l3 3H20l1 3"/><circle cx="8" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M14 10V6h3M17 6l2 2"/>',
+      nodes: [['01','Location','Capture where the vehicle is and the help being requested.'],['02','Vehicle','Organize vehicle, access, and destination details.'],['03','Dispatch','Send a clear job brief to the appropriate driver.'],['04','Status','Keep the customer and team aligned as the job progresses.']]
+    },
+    'construction-industry.html': {
+      variant: 'construction', kicker: 'Field coordination', title: 'Project command', signal: 'Site synchronized',
+      icon: '<path d="M4 20h16M6 20V9h12v11M9 9V5h6v4M9 13h2M13 13h2M9 17h2M13 17h2"/><path d="M3 9h18"/>',
+      nodes: [['01','Enquiry','Collect project goals, location, and timing requirements.'],['02','Estimate','Move scope details into a consistent review and pricing flow.'],['03','Handoff','Share approved information with office and field teams.'],['04','Progress','Keep milestones, updates, and next actions organized.']]
+    },
+    'landscaping-industry.html': {
+      variant: 'landscaping', kicker: 'Seasonal operations', title: 'Route planner', signal: 'Schedule growing',
+      icon: '<path d="M12 21V9M12 14c-5 0-8-3-8-8 5 0 8 3 8 8ZM12 11c0-4 3-7 8-7 0 5-3 8-8 8"/><path d="M7 21h10"/>',
+      nodes: [['01','Request','Capture the property, service, and seasonal need.'],['02','Quote','Organize measurements and scope for consistent estimating.'],['03','Schedule','Group approved work by timing, team, and service area.'],['04','Route','Give crews clear job details and customer notes.']]
+    },
+    'cleaning-industry.html': {
+      variant: 'cleaning', kicker: 'Quality workflow', title: 'Clean operations', signal: 'Checklist complete',
+      icon: '<path d="m12 3 1.4 4.1L17.5 8.5l-4.1 1.4L12 14l-1.4-4.1-4.1-1.4 4.1-1.4L12 3Z"/><path d="m18 13 .8 2.2L21 16l-2.2.8L18 19l-.8-2.2L15 16l2.2-.8L18 13ZM5 14l.7 1.8 1.8.7-1.8.7L5 19l-.7-1.8-1.8-.7 1.8-.7L5 14Z"/>',
+      nodes: [['01','Space','Collect property type, size, access, and priorities.'],['02','Scope','Turn requirements into a clear cleaning checklist.'],['03','Team','Assign the right crew, timing, and job information.'],['04','Quality','Capture completion notes and follow-up actions.']]
+    },
+    'solar-industry.html': {
+      variant: 'solar', kicker: 'Energy journey', title: 'Solar pipeline', signal: 'Energy flowing',
+      icon: '<circle cx="12" cy="8" r="3"/><path d="M12 2v2M12 12v2M6 8H4M20 8h-2M7.8 3.8 6.4 2.4M17.6 13.6l-1.4-1.4M16.2 3.8l1.4-1.4M6.4 13.6l1.4-1.4M5 16h14l2 5H3l2-5Z"/>',
+      nodes: [['01','Lead','Capture property, energy, and project-interest details.'],['02','Site','Coordinate eligibility information and assessment timing.'],['03','Design','Move qualified opportunities into review and proposal.'],['04','Install','Keep approvals, scheduling, and updates connected.']]
+    },
+    'moving-industry.html': {
+      variant: 'moving', kicker: 'Moving coordination', title: 'Move command', signal: 'Crew on schedule',
+      icon: '<path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 10h5M8.5 7v6"/>',
+      nodes: [['01','Inventory','Collect origin, destination, timing, and move details.'],['02','Quote','Structure the information needed for a clear estimate.'],['03','Crew','Coordinate availability, equipment, and job instructions.'],['04','Move','Keep confirmations and status updates in one flow.']]
+    },
+    'renovation-industry.html': {
+      variant: 'renovation', kicker: 'Project planning', title: 'Renovation flow', signal: 'Plan approved',
+      icon: '<path d="M4 20h16M6 20V8l6-4 6 4v12M9 20v-6h6v6"/><path d="m15 5 4-3 3 3-4 4M18 2l3 3"/>',
+      nodes: [['01','Vision','Capture project goals, spaces, and desired timing.'],['02','Estimate','Organize scope details for a consistent review.'],['03','Plan','Connect approvals, selections, and scheduling milestones.'],['04','Build','Keep clients and trades aligned as work progresses.']]
+    },
+    'property-services-industry.html': {
+      variant: 'property', kicker: 'Property operations', title: 'Service hub', signal: 'Request resolved',
+      icon: '<path d="M4 21V5h10v16M14 9h6v12M8 9h2M8 13h2M8 17h2M17 13h1M17 17h1"/><path d="M2 21h20"/>',
+      nodes: [['01','Request','Capture the property, issue, priority, and access details.'],['02','Assign','Route the work to the right service team or vendor.'],['03','Inspect','Keep job information and completion evidence organized.'],['04','Close','Share status, document outcomes, and schedule follow-up.']]
+    },
+    'consulting-firms-industry.html': {
+      variant: 'consulting', kicker: 'Client intelligence', title: 'Engagement map', signal: 'Opportunity aligned',
+      icon: '<circle cx="12" cy="12" r="8"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z"/><circle cx="12" cy="12" r="1"/>',
+      nodes: [['01','Enquiry','Capture the client need, organization, timing, and area of interest.'],['02','Context','Prepare a concise brief with relevant account and opportunity details.'],['03','Review','Route the opportunity to the appropriate consultant for judgment.'],['04','Engage','Coordinate approved next steps, documents, and client communication.']]
+    },
+    'marketing-agencies-industry.html': {
+      variant: 'agency', kicker: 'Agency operations', title: 'Campaign command', signal: 'Brief activated',
+      icon: '<path d="m3 11 13-5v12L3 13v-2Z"/><path d="M16 9c2 0 4 1.3 4 3s-2 3-4 3M6 14l1.5 6h3L9 15"/>',
+      nodes: [['01','Opportunity','Capture the prospect, growth goal, services, and timing.'],['02','Brief','Organize scope, brand context, assets, and approval requirements.'],['03','Review','Give strategy and delivery leads a clear decision-ready summary.'],['04','Deliver','Connect work, feedback, approvals, and reporting milestones.']]
+    },
+    'recruitment-businesses-industry.html': {
+      variant: 'recruitment', kicker: 'Talent operations', title: 'Placement pipeline', signal: 'Match in review',
+      icon: '<circle cx="8" cy="8" r="3"/><circle cx="17" cy="7" r="2.5"/><path d="M3 20v-2c0-3 2-5 5-5s5 2 5 5v2M14 14c3 0 6 1.5 6 5v1"/><path d="m15 11 1.5 1.5L20 9"/>',
+      nodes: [['01','Role','Capture the client, position, requirements, and hiring context.'],['02','Intake','Structure role and candidate information for consistent review.'],['03','Match','Keep recruiter judgment central to shortlisting and communication.'],['04','Coordinate','Connect interviews, feedback, decisions, and follow-up.']]
+    },
+    'legal-services-industry.html': {
+      variant: 'legal', kicker: 'Matter intake', title: 'Legal workflow', signal: 'Review protected',
+      icon: '<path d="M12 3v18M6 6h12M8 6l-4 7h8L8 6ZM16 6l-4 7h8l-4-7ZM8 21h8"/>',
+      nodes: [['01','Enquiry','Capture the prospective matter and contact information securely.'],['02','Checks','Prepare the details required for conflict and eligibility review.'],['03','Authorize','Keep legal judgment and acceptance decisions with qualified staff.'],['04','Handoff','Coordinate approved matter opening, documents, and communication.']]
+    },
+    'accounting-firms-industry.html': {
+      variant: 'accounting', kicker: 'Practice workflow', title: 'Client ledger', signal: 'Checklist balanced',
+      icon: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2M8 18h2M14 18h2"/>',
+      nodes: [['01','Enquiry','Capture the service need, entity, timing, and client context.'],['02','Checklist','Prepare the right document and information request for the work.'],['03','Review','Route complete context to the appropriate accountant.'],['04','Schedule','Coordinate recurring work, deadlines, and approved follow-up.']]
+    },
+    'advisory-teams-industry.html': {
+      variant: 'advisory', kicker: 'Decision support', title: 'Advisory compass', signal: 'Direction clarified',
+      icon: '<path d="M4 19V9M10 19V5M16 19v-7M22 19V3"/><path d="m3 7 6-3 6 5 7-7"/><circle cx="9" cy="4" r="1"/><circle cx="15" cy="9" r="1"/>',
+      nodes: [['01','Need','Capture the decision, stakeholders, timing, and desired outcome.'],['02','Context','Assemble relevant information and prior relationship history.'],['03','Advise','Keep interpretation and recommendation with the advisory team.'],['04','Action','Coordinate approved actions, ownership, and follow-through.']]
+    },
+    'it-services-industry.html': {
+      variant: 'it', kicker: 'Service operations', title: 'IT control plane', signal: 'Ticket synchronized',
+      icon: '<rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01M12 7h5M12 17h5"/>',
+      nodes: [['01','Request','Capture the issue, user, system, impact, and service context.'],['02','Context','Summarize technical details and approved account information.'],['03','Review','Route diagnosis and priority decisions to the right specialist.'],['04','Track','Connect delivery status, client updates, and resolution records.']]
+    },
+    'architecture-firms-industry.html': {
+      variant: 'architecture', kicker: 'Design practice', title: 'Project blueprint', signal: 'Brief approved',
+      icon: '<path d="M4 20V6l8-3 8 3v14M8 20v-5h8v5M8 8h2M14 8h2M8 11h2M14 11h2"/><path d="M2 20h20"/>',
+      nodes: [['01','Discover','Capture project type, site, ambitions, timing, and stakeholders.'],['02','Brief','Organize requirements, documents, constraints, and key questions.'],['03','Review','Keep qualification and design direction with firm leadership.'],['04','Open','Coordinate approved project setup, communication, and milestones.']]
+    },
+    'engineering-consultancies-industry.html': {
+      variant: 'engineering', kicker: 'Technical delivery', title: 'Engineering grid', signal: 'Resources aligned',
+      icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/><circle cx="12" cy="12" r="7"/>',
+      nodes: [['01','Enquiry','Capture the technical need, location, scope, and delivery timing.'],['02','Requirements','Prepare specifications, documents, constraints, and open questions.'],['03','Review','Route feasibility and resource decisions to qualified engineers.'],['04','Initiate','Coordinate approved delivery, reviews, documents, and milestones.']]
+    },
+    'training-providers-industry.html': {
+      variant: 'training', kicker: 'Learning journey', title: 'Programme hub', signal: 'Cohort prepared',
+      icon: '<path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 12v5c3 2 7 2 10 0v-5M21 9v6"/>',
+      nodes: [['01','Discover','Help learners or buyers find the relevant programme and format.'],['02','Register','Capture participant, organization, timing, and access information.'],['03','Review','Keep eligibility, exceptions, and delivery decisions with coordinators.'],['04','Deliver','Connect materials, attendance, communication, and follow-up.']]
+    },
+    'creative-studios-industry.html': {
+      variant: 'creative', kicker: 'Creative production', title: 'Studio flow', signal: 'Concept in motion',
+      icon: '<path d="m14 4 6 6L9 21H3v-6L14 4Z"/><path d="m12 6 6 6M3 21l5-5"/><circle cx="6" cy="18" r="1"/>',
+      nodes: [['01','Explore','Capture the client, creative need, deliverables, and timing.'],['02','Brief','Organize brand context, references, assets, and approval criteria.'],['03','Review','Keep creative direction and feasibility decisions with the studio.'],['04','Produce','Connect tasks, feedback, versions, approvals, and delivery.']]
+    },
+    'b2b-service-firms-industry.html': {
+      variant: 'b2b', kicker: 'Revenue delivery', title: 'Client lifecycle', signal: 'Account connected',
+      icon: '<path d="M3 12h4l3-3 4 4 3-3h4"/><path d="m7 12 5 5 5-5M5 8l4-4 3 3 3-3 4 4M5 16l3 3M19 16l-3 3"/>',
+      nodes: [['01','Enquiry','Capture the organization, need, stakeholders, and opportunity context.'],['02','Prepare','Organize qualification, account history, scope, and proposal inputs.'],['03','Review','Route commercial and delivery decisions to the appropriate team.'],['04','Onboard','Coordinate approved handoffs, communication, and relationship follow-up.']]
+    }
+  };
+  const visual = industryVisuals[pageName];
+  if (visual) {
+    const nodeMarkup = visual.nodes.map(([number, label], index) => `
+      <button class="industry-visual-node industry-visual-node-${index + 1}" type="button" data-industry-visual-node data-index="${index}" aria-pressed="${index === 0}">
+        <span>${number}</span><strong>${label}</strong><i aria-hidden="true"></i>
+      </button>`).join('');
+    industryHeroVisual.classList.add('is-industry-visual', `industry-visual--${visual.variant}`);
+    industryHeroVisual.innerHTML = `
+      <div class="industry-visual-toolbar" aria-hidden="true"><span><i></i><i></i><i></i></span><strong>${visual.kicker}</strong><em>Interactive workflow</em></div>
+      <div class="industry-visual-stage">
+        <svg class="industry-visual-lines" viewBox="0 0 520 340" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M260 170C207 170 184 72 92 72M260 170C313 170 336 72 428 72M260 170C207 170 184 268 92 268M260 170C313 170 336 268 428 268"/><circle cx="92" cy="72" r="3"/><circle cx="428" cy="72" r="3"/><circle cx="92" cy="268" r="3"/><circle cx="428" cy="268" r="3"/></svg>
+        <div class="industry-visual-core" aria-hidden="true"><span class="industry-visual-orbit"></span><svg viewBox="0 0 24 24">${visual.icon}</svg><small>${visual.kicker}</small><strong>${visual.title}</strong><em>${visual.signal}</em></div>
+        ${nodeMarkup}
+      </div>
+      <div class="industry-visual-readout" aria-live="polite"><span>01</span><div><strong>${visual.nodes[0][1]}</strong><p>${visual.nodes[0][2]}</p></div><small>Explore the workflow</small></div>`;
+    const nodes = [...industryHeroVisual.querySelectorAll('[data-industry-visual-node]')];
+    const readoutNumber = industryHeroVisual.querySelector('.industry-visual-readout > span');
+    const readoutTitle = industryHeroVisual.querySelector('.industry-visual-readout strong');
+    const readoutCopy = industryHeroVisual.querySelector('.industry-visual-readout p');
+    const selectNode = (node) => {
+      const index = Number(node.dataset.index);
+      nodes.forEach((item) => {
+        item.classList.toggle('is-selected', item === node);
+        item.setAttribute('aria-pressed', String(item === node));
+      });
+      readoutNumber.textContent = visual.nodes[index][0];
+      readoutTitle.textContent = visual.nodes[index][1];
+      readoutCopy.textContent = visual.nodes[index][2];
     };
     nodes.forEach((node) => {
       node.addEventListener('click', () => selectNode(node));
