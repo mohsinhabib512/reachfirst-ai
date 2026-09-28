@@ -151,3 +151,7 @@ The 17 Lucide symbols from the existing licensed sprite are also embedded in `in
 ## Reach First diamond artwork
 
 `assets/images/rf-diamonds-top.png` and `assets/images/rf-diamonds-bottom.png` were supplied by the user from the Reach First brand artwork. They are used only as low-opacity decorative elements in CTA, safeguard, and footer whitespace and are hidden where small-screen space would make them distracting.
+
+## Action Towing case study
+
+The Action Towing logo and project photography used in `action-towing-case-study.html` are public client assets downloaded from `https://www.actiontowingservice.ca/wp-content/themes/action-towing-theme/img/` on 2026-09-28: `logo.svg`, `banner-bg.webp`, `1.webp`, `6.webp`, `8.webp`, and `9.webp`. Browser and phone presentations, annotations, the UI board, and all layouts are original HTML/CSS compositions. No analytics, rankings, reviews, customer identities, or unsupported performance claims are reproduced.

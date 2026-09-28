@@ -12,8 +12,9 @@ createServer(async (req, res) => {
     const relative = file.slice(root.length + 1).split(sep).join('/');
     const htmlPages = ['index.html', 'about-us.html', 'services.html', 'industries.html', 'home-field-services.html', 'professional-services.html', 'case-studies.html', 'insights.html', 'insight-ai-2026.html', 'how-we-work.html', 'book-consultation.html', 'faq.html', 'privacy-policy.html', 'terms-conditions.html', 'ai-consulting-automation-planning.html', 'business-workflow-automation.html', 'sales-crm-automation.html', 'ai-agents-customer-support.html', 'ai-voice-agents.html', 'custom-ai-applications-integrations.html', 'managed-ai-automation-support.html', 'digital-marketing-services.html'];
     const isIndustryDetail = /^[a-z-]+-industry\.html$/.test(relative);
+    const isCaseStudyDetail = /^[a-z0-9-]+-case-study\.html$/.test(relative);
     const isBlogDetail = /^insight-[a-z0-9-]+\.html$/.test(relative);
-    if (!file.startsWith(root + sep) || !(htmlPages.includes(relative) || isIndustryDetail || isBlogDetail || relative.startsWith('assets/'))) {
+    if (!file.startsWith(root + sep) || !(htmlPages.includes(relative) || isIndustryDetail || isCaseStudyDetail || isBlogDetail || relative.startsWith('assets/'))) {
       res.writeHead(404).end('Not found');
       return;
     }

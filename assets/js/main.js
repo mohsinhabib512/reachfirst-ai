@@ -421,6 +421,35 @@ if (header) {
   updateShadow();
 }
 
+// Progressive case-study links and reveal motion.
+const actionTowingCard = [...document.querySelectorAll('.case-experience-grid article')]
+  .find((card) => card.querySelector('h3')?.textContent.trim() === 'Action Towing');
+if (actionTowingCard) {
+  actionTowingCard.classList.add('has-case-link');
+  const link = document.createElement('a');
+  link.className = 'case-card-link';
+  link.href = 'action-towing-case-study.html';
+  link.innerHTML = 'View case study <svg aria-hidden="true"><use href="#c-arrow"></use></svg>';
+  actionTowingCard.querySelector('small')?.replaceWith(link);
+}
+
+const caseRevealItems = document.querySelectorAll('[data-case-reveal]');
+if (caseRevealItems.length) {
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  if (reducedMotion.matches || !('IntersectionObserver' in window)) {
+    caseRevealItems.forEach((item) => item.classList.add('is-visible'));
+  } else {
+    const caseObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+    caseRevealItems.forEach((item) => caseObserver.observe(item));
+  }
+}
+
 // Decorative hero motion: manual pause always takes precedence over visibility.
 const heroMotion = document.querySelector('[data-hero-motion]');
 if (heroMotion) {
