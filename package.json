@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tailwindcss -i ./src/styles.css -o ./assets/css/styles.css --minify",
     "generate:industries": "node scripts/generate-industry-pages.mjs && node scripts/generate-professional-industry-pages.mjs",
+    "generate:blogs": "node scripts/generate-blog-pages.mjs",
     "watch": "tailwindcss -i ./src/styles.css -o ./assets/css/styles.css --watch",
     "preview": "node scripts/preview.mjs"
   },
