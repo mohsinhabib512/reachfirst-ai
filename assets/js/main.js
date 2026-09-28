@@ -421,6 +421,118 @@ if (header) {
   updateShadow();
 }
 
+// Service-specific hero infographics. The original semantic label remains on the wrapper.
+const serviceDetailVisual = document.querySelector('.detail-hero .detail-visual');
+if (serviceDetailVisual) {
+  const pageName = location.pathname.split('/').pop() || '';
+  const serviceVisuals = {
+    'ai-consulting-automation-planning.html': {
+      variant: 'planning', kicker: 'Opportunity map', title: 'Practical roadmap',
+      nodes: [
+        ['01', 'Priorities', 'Clarify the business outcome and the decision the roadmap needs to support.'],
+        ['02', 'Workflows', 'Map the current steps, handoffs, exceptions, and repeated work.'],
+        ['03', 'Systems', 'Review available tools, access, data, and integration constraints.'],
+        ['04', 'Oversight', 'Define where people review, approve, or handle exceptions.']
+      ]
+    },
+    'business-workflow-automation.html': {
+      variant: 'workflow', kicker: 'Connected sequence', title: 'Workflow routing',
+      nodes: [
+        ['01', 'Request', 'Capture the information required to begin the process.'],
+        ['02', 'Route', 'Direct the work using agreed rules and ownership.'],
+        ['03', 'Review', 'Pause for staff judgment when a decision or exception needs it.'],
+        ['04', 'Update', 'Prepare the next task, notification, document, or system record.']
+      ]
+    },
+    'sales-crm-automation.html': {
+      variant: 'crm', kicker: 'Lead coordination', title: 'Sales workflow',
+      nodes: [
+        ['01', 'Enquiry', 'Bring eligible enquiries into one structured intake path.'],
+        ['02', 'Qualify', 'Organize useful details before ownership is confirmed.'],
+        ['03', 'Assign', 'Make responsibility and the next action visible.'],
+        ['04', 'CRM', 'Keep the approved record and follow-up stage aligned.']
+      ]
+    },
+    'ai-agents-customer-support.html': {
+      variant: 'agents', kicker: 'Assisted resolution', title: 'AI assistance',
+      nodes: [
+        ['01', 'Question', 'Receive a routine customer or staff request.'],
+        ['02', 'Knowledge', 'Use selected and maintained business information.'],
+        ['03', 'Answer', 'Provide an eligible response or complete a defined step.'],
+        ['04', 'Handoff', 'Escalate sensitive, uncertain, or out-of-scope situations.']
+      ]
+    },
+    'ai-voice-agents.html': {
+      variant: 'voice', kicker: 'Inbound call flow', title: 'Voice workflow',
+      nodes: [
+        ['01', 'Caller', 'Receive an inbound call within the agreed workflow.'],
+        ['02', 'Intent', 'Collect details and identify the eligible request type.'],
+        ['03', 'Schedule', 'Check defined information or prepare an appointment step.'],
+        ['04', 'Staff', 'Route conversations that require human attention.']
+      ]
+    },
+    'custom-ai-applications-integrations.html': {
+      variant: 'custom', kicker: 'Purpose-built system', title: 'Custom solution',
+      nodes: [
+        ['01', 'Users', 'Design around the people, roles, and jobs the tool must support.'],
+        ['02', 'Systems', 'Connect available platforms, APIs, and existing operations.'],
+        ['03', 'Documents', 'Structure intake, review, search, and document movement.'],
+        ['04', 'Data', 'Apply permissions and business logic to approved information.']
+      ]
+    },
+    'managed-ai-automation-support.html': {
+      variant: 'support', kicker: 'Ongoing operations', title: 'Managed support',
+      nodes: [
+        ['01', 'Monitor', 'Watch agreed workflows, connections, and operational signals.'],
+        ['02', 'Maintain', 'Address planned upkeep and implementation changes.'],
+        ['03', 'Support', 'Help the team use documented processes and raise issues.'],
+        ['04', 'Improve', 'Review evidence and prioritize appropriate refinements.']
+      ]
+    },
+    'digital-marketing-services.html': {
+      variant: 'marketing', kicker: 'Connected growth system', title: 'Digital growth',
+      nodes: [
+        ['01', 'Audience', 'Define who the experience and campaigns need to reach.'],
+        ['02', 'Brand', 'Create a consistent identity, message, and digital presence.'],
+        ['03', 'Channels', 'Coordinate website, search, social, content, and advertising.'],
+        ['04', 'Measure', 'Use agreed indicators to guide informed improvements.']
+      ]
+    }
+  };
+  const visual = serviceVisuals[pageName];
+  if (visual) {
+    const nodeMarkup = visual.nodes.map(([number, label, description], index) => `
+      <button class="service-visual-node service-visual-node-${index + 1}" type="button" data-service-visual-node data-description="${description}" aria-pressed="${index === 0}">
+        <span>${number}</span><strong>${label}</strong><i aria-hidden="true"></i>
+      </button>`).join('');
+    serviceDetailVisual.classList.add('is-service-visual', `service-visual--${visual.variant}`);
+    serviceDetailVisual.innerHTML = `
+      <div class="service-visual-toolbar" aria-hidden="true"><span><i></i><i></i><i></i></span><strong>${visual.kicker}</strong><em>Interactive model</em></div>
+      <div class="service-visual-stage">
+        <svg class="service-visual-lines" viewBox="0 0 520 340" preserveAspectRatio="none" aria-hidden="true"><path d="M260 170C210 170 185 72 92 72M260 170C310 170 335 72 428 72M260 170C210 170 185 268 92 268M260 170C310 170 335 268 428 268"/><circle cx="92" cy="72" r="3"/><circle cx="428" cy="72" r="3"/><circle cx="92" cy="268" r="3"/><circle cx="428" cy="268" r="3"/></svg>
+        <div class="service-visual-core-panel" aria-hidden="true"><div class="service-visual-motif"><span></span><span></span><span></span><span></span><span></span></div><small>${visual.kicker}</small><strong>${visual.title}</strong></div>
+        ${nodeMarkup}
+      </div>
+      <div class="service-visual-readout" aria-live="polite"><span>01</span><div><strong>${visual.nodes[0][1]}</strong><p>${visual.nodes[0][2]}</p></div><small>Focus or tap a stage</small></div>`;
+    const nodes = [...serviceDetailVisual.querySelectorAll('[data-service-visual-node]')];
+    const readoutNumber = serviceDetailVisual.querySelector('.service-visual-readout > span');
+    const readoutTitle = serviceDetailVisual.querySelector('.service-visual-readout strong');
+    const readoutCopy = serviceDetailVisual.querySelector('.service-visual-readout p');
+    const selectNode = (node) => {
+      nodes.forEach((item) => { item.classList.toggle('is-selected', item === node); item.setAttribute('aria-pressed', String(item === node)); });
+      readoutNumber.textContent = node.querySelector('span').textContent;
+      readoutTitle.textContent = node.querySelector('strong').textContent;
+      readoutCopy.textContent = node.dataset.description;
+    };
+    nodes.forEach((node) => {
+      node.addEventListener('click', () => selectNode(node));
+      node.addEventListener('focus', () => selectNode(node));
+      node.addEventListener('pointerenter', (event) => { if (event.pointerType === 'mouse') selectNode(node); });
+    });
+    selectNode(nodes[0]);
+  }
+}
+
 // Progressive case-study links and reveal motion.
 const actionTowingCard = [...document.querySelectorAll('.case-experience-grid article')]
   .find((card) => card.querySelector('h3')?.textContent.trim() === 'Action Towing');
