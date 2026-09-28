@@ -726,25 +726,17 @@ if (caseRevealItems.length) {
   }
 }
 
-// Decorative hero motion: manual pause always takes precedence over visibility.
+// Decorative hero motion runs only when visible and appropriate for the device.
 const heroMotion = document.querySelector('[data-hero-motion]');
 if (heroMotion) {
-  const control = heroMotion.querySelector('[data-hero-motion-toggle]');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const artworkSize = matchMedia('(min-width: 640px)');
-  let manuallyPaused = false;
   let inView = false;
   const syncMotion = () => {
     const enabled = artworkSize.matches && !reducedMotion.matches;
     heroMotion.classList.toggle('is-motion-ready', enabled);
-    heroMotion.classList.toggle('is-motion-running', enabled && inView && !document.hidden && !manuallyPaused);
-    control.hidden = !enabled;
-    control.dataset.paused = String(manuallyPaused);
-    const action = manuallyPaused ? 'Resume animation' : 'Pause animation';
-    control.setAttribute('aria-label', action);
-    control.title = action;
+    heroMotion.classList.toggle('is-motion-running', enabled && inView && !document.hidden);
   };
-  control.addEventListener('click', () => { manuallyPaused = !manuallyPaused; syncMotion(); });
   const observer = new IntersectionObserver(([entry]) => {
     inView = entry.isIntersecting;
     syncMotion();
@@ -760,7 +752,6 @@ if (heroMotion) {
 const opportunities = document.querySelector('#automation-opportunities');
 if (opportunities) {
   const cards = [...opportunities.querySelectorAll('.opportunity')];
-  const replay = opportunities.querySelector('[data-opportunities-replay]');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const played = new Set();
   const frames = new Map();
@@ -787,9 +778,7 @@ if (opportunities) {
       if (event.pointerType === 'mouse') play(card);
     });
   });
-  replay.addEventListener('click', () => cards.forEach(play));
   const syncPreference = () => {
-    replay.hidden = reducedMotion.matches;
     if (reducedMotion.matches) cards.forEach((card) => {
       cancelAnimationFrame(frames.get(card));
       card.classList.remove('is-playing');
