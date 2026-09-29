@@ -3513,6 +3513,109 @@ html.mega-menu-open body { padding-right: var(--menu-scrollbar-width, 0); }
 .mega-header-nav a:hover::after,
 .mega-header-nav a:focus-visible::after,
 .mega-header-nav a.is-current::after { transform: scaleX(1); transform-origin: left; }
+.mega-header-menu { position: relative; display: flex; align-items: center; }
+.mega-header-menu > a { display: inline-flex; align-items: center; gap: .28rem; }
+.mega-header-menu > a > svg { width: 14px; height: 14px; transition: transform 220ms ease; }
+.mega-header-menu.is-open > a > svg { transform: rotate(180deg); }
+.mega-header-dropdown {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 1.15rem);
+  left: 50%;
+  width: min(43rem, calc(100vw - 3rem));
+  padding: .8rem;
+  border: 1px solid rgb(0 106 159 / 15%);
+  border-radius: 18px;
+  background: rgb(255 255 255 / 98%);
+  box-shadow: 0 24px 60px rgb(15 47 65 / 16%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 10px);
+  transition: opacity 190ms ease, visibility 0s linear 190ms, transform 240ms cubic-bezier(.2,.75,.25,1);
+}
+.mega-header-dropdown::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 1.25rem;
+}
+.mega-header-menu.is-open .mega-header-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+  transition-delay: 0s;
+}
+.mega-header-industries .mega-header-dropdown { width: min(29rem, calc(100vw - 3rem)); }
+.mega-header-dropdown-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .45rem .55rem .8rem;
+  border-bottom: 1px solid var(--color-line);
+}
+.mega-header-dropdown-top > span { color: var(--color-brand-strong); font-size: .68rem; font-weight: 750; text-transform: uppercase; }
+.mega-header-nav .mega-header-dropdown-top > a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--color-brand-strong);
+  font-size: .7rem;
+  font-weight: 700;
+}
+.mega-header-dropdown-top > a svg { width: 16px; height: 16px; }
+.mega-header-dropdown-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .25rem; padding-top: .65rem; }
+.mega-header-dropdown-list { display: grid; gap: .35rem; padding-top: .65rem; }
+.mega-header-nav .mega-header-dropdown-grid > a,
+.mega-header-nav .mega-header-dropdown-list > a {
+  display: flex;
+  min-width: 0;
+  min-height: 52px;
+  align-items: center;
+  gap: .7rem;
+  padding: .55rem .6rem;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  color: var(--color-ink);
+  font-size: .74rem;
+  font-weight: 620;
+  line-height: 1.35;
+  white-space: normal;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+.mega-header-nav .mega-header-dropdown-grid > a:hover,
+.mega-header-nav .mega-header-dropdown-grid > a:focus-visible,
+.mega-header-nav .mega-header-dropdown-list > a:hover,
+.mega-header-nav .mega-header-dropdown-list > a:focus-visible {
+  border-color: rgb(0 131 198 / 14%);
+  background: var(--color-tint);
+  color: var(--color-brand-strong);
+  transform: translateY(-1px);
+}
+.mega-header-nav .mega-header-dropdown a::after { display: none; }
+.mega-header-link-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  border: 1px solid #d4e7f1;
+  border-radius: 9px;
+  background: linear-gradient(145deg, white, var(--color-tint));
+  color: var(--color-brand-strong);
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+.mega-header-link-icon svg { width: 17px; height: 17px; }
+.mega-header-dropdown a:hover .mega-header-link-icon,
+.mega-header-dropdown a:focus-visible .mega-header-link-icon { border-color: var(--color-brand); background: var(--color-brand); color: white; }
+.mega-header-dropdown-list strong,
+.mega-header-dropdown-list small { display: block; }
+.mega-header-dropdown-list strong { font-size: .77rem; }
+.mega-header-dropdown-list small { margin-top: .15rem; color: var(--color-muted); font-size: .64rem; font-weight: 450; }
 .mega-header-quote {
   display: none;
   color: white;
@@ -3597,6 +3700,7 @@ html.mega-menu-open body { padding-right: var(--menu-scrollbar-width, 0); }
   pointer-events: none;
 }
 .site-header.mega-menu-active .mega-header-nav a { display: none; }
+.site-header.mega-menu-active .mega-header-menu { display: none; }
 .site-header.mega-menu-active .mega-header-quote { display: block; }
 .site-header.mega-menu-active .mega-menu-toggle {
   border-color: rgb(255 255 255 / 28%);

@@ -431,14 +431,51 @@ if (siteHeader) {
   document.querySelector('#mobile-drawer')?.remove();
 
   const arrow = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>';
+  const headerIcon = (content) => `<span class="mega-header-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${content}</svg></span>`;
+  const headerIcons = {
+    plan: headerIcon('<circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 17c5-1 3-8 8-10"/>'),
+    workflow: headerIcon('<rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="15" y="15" width="6" height="6" rx="1.5"/><path d="M9 6h3a3 3 0 0 1 3 3v6M6 9v3a3 3 0 0 0 3 3h6"/>'),
+    crm: headerIcon('<circle cx="8" cy="8" r="3"/><path d="M3.5 18c.7-3 2.2-4.5 4.5-4.5s3.8 1.5 4.5 4.5M15 7h6M15 11h4M15 15h5"/>'),
+    support: headerIcon('<path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 10h8M8 13h5"/>'),
+    voice: headerIcon('<path d="M8 4h3l2 5-2 2c1.2 2.4 2.9 4.1 5 5l2-2 4 2v3c0 1.1-.9 2-2 2C10.6 21 3 13.4 3 4c0-1.1.9-2 2-2h2"/>'),
+    custom: headerIcon('<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/>'),
+    managed: headerIcon('<path d="M4 7h10M18 7h2M4 12h2M10 12h10M4 17h7M15 17h5"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="12" r="2"/><circle cx="13" cy="17" r="2"/>'),
+    marketing: headerIcon('<path d="M4 19V9M10 19V5M16 19v-7M22 19H2M4 8l6-4 6 5 5-5"/>'),
+    field: headerIcon('<path d="M3 12 12 4l9 8M6 10v10h12V10M9 20v-6h6v6"/>'),
+    professional: headerIcon('<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 12h18M10 12v2h4v-2"/>')
+  };
   siteHeader.innerHTML = `
     <div class="site-container header-row mega-header-row">
       <a class="header-brand mega-header-brand" href="./" aria-label="Reach First home">
         <img class="brand-logo" src="assets/images/reach-first-logo.svg" width="301" height="34" alt="Reach First">
       </a>
       <nav class="mega-header-nav" aria-label="Primary navigation">
-        <a href="services.html">Services</a>
-        <a href="industries.html">Industries</a>
+        <div class="mega-header-menu mega-header-services">
+          <a href="services.html">Services <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></a>
+          <div class="mega-header-dropdown" aria-label="Services navigation">
+            <div class="mega-header-dropdown-top"><span>Services</span><a href="services.html">View all services ${arrow}</a></div>
+            <div class="mega-header-dropdown-grid">
+              <a href="ai-consulting-automation-planning.html">${headerIcons.plan}<span>AI Consulting &amp; Automation Planning</span></a>
+              <a href="business-workflow-automation.html">${headerIcons.workflow}<span>Business Workflow Automation</span></a>
+              <a href="sales-crm-automation.html">${headerIcons.crm}<span>Sales &amp; CRM Automation</span></a>
+              <a href="ai-agents-customer-support.html">${headerIcons.support}<span>AI Agents &amp; Customer Support</span></a>
+              <a href="ai-voice-agents.html">${headerIcons.voice}<span>AI Voice Agents</span></a>
+              <a href="custom-ai-applications-integrations.html">${headerIcons.custom}<span>Custom AI Applications &amp; Integrations</span></a>
+              <a href="managed-ai-automation-support.html">${headerIcons.managed}<span>Managed AI &amp; Automation Support</span></a>
+              <a href="digital-marketing-services.html">${headerIcons.marketing}<span>Digital Marketing Services</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="mega-header-menu mega-header-industries">
+          <a href="industries.html">Industries <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></a>
+          <div class="mega-header-dropdown" aria-label="Industries navigation">
+            <div class="mega-header-dropdown-top"><span>Industries</span><a href="industries.html">View all industries ${arrow}</a></div>
+            <div class="mega-header-dropdown-list">
+              <a href="home-field-services.html">${headerIcons.field}<span><strong>Home &amp; Field Services</strong><small>Operations, scheduling, and customer workflows</small></span></a>
+              <a href="professional-services.html">${headerIcons.professional}<span><strong>Professional Services</strong><small>Client delivery, documents, and team knowledge</small></span></a>
+            </div>
+          </div>
+        </div>
         <a href="how-we-work.html">How We Work</a>
         <a href="case-studies.html">Case Studies</a>
         <a href="insights.html">Blogs</a>
@@ -581,12 +618,37 @@ if (siteHeader) {
   const menuToggle = siteHeader.querySelector('.mega-menu-toggle');
   const menuOverlay = siteHeader.querySelector('#site-mega-menu');
   const menuGroups = [...siteHeader.querySelectorAll('[data-mega-group]')];
+  const headerDropdownMenus = [...siteHeader.querySelectorAll('.mega-header-menu')];
   document.body.append(menuOverlay);
   const menuBackgroundRegions = [...document.querySelectorAll('main, footer')];
   const desktopMenuQuery = matchMedia('(min-width: 1100px)');
   const reduceMenuMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let menuCloseTimer;
   let menuFocusTimer;
+
+  const closeHeaderDropdowns = (except = null) => {
+    headerDropdownMenus.forEach((menu) => {
+      if (menu !== except) menu.classList.remove('is-open');
+    });
+  };
+  headerDropdownMenus.forEach((menu) => {
+    menu.addEventListener('mouseenter', () => {
+      closeHeaderDropdowns(menu);
+      menu.classList.add('is-open');
+    });
+    menu.addEventListener('mouseleave', () => {
+      if (!menu.contains(document.activeElement)) menu.classList.remove('is-open');
+    });
+    menu.addEventListener('focusin', () => {
+      closeHeaderDropdowns(menu);
+      menu.classList.add('is-open');
+    });
+    menu.addEventListener('focusout', () => {
+      requestAnimationFrame(() => {
+        if (!menu.contains(document.activeElement)) menu.classList.remove('is-open');
+      });
+    });
+  });
 
   const currentHeaderPage = location.pathname.split('/').pop() || 'index.html';
   siteHeader.querySelectorAll('.mega-header-nav a, .mega-header-cta').forEach((link) => {
@@ -622,6 +684,7 @@ if (siteHeader) {
   const openMegaMenu = () => {
     clearTimeout(menuCloseTimer);
     clearTimeout(menuFocusTimer);
+    closeHeaderDropdowns();
     menuOverlay.hidden = false;
     menuOverlay.setAttribute('aria-hidden', 'false');
     menuToggle.setAttribute('aria-expanded', 'true');
@@ -669,6 +732,10 @@ if (siteHeader) {
   });
 
   document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && headerDropdownMenus.some((menu) => menu.classList.contains('is-open')) && !siteHeader.classList.contains('mega-menu-active')) {
+      closeHeaderDropdowns();
+      return;
+    }
     if (!siteHeader.classList.contains('mega-menu-active')) return;
     if (event.key === 'Escape') {
       event.preventDefault();
