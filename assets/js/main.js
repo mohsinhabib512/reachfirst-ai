@@ -612,6 +612,10 @@ if (siteHeader) {
           </div>
           <a class="mega-menu-cta" href="book-consultation.html">Book AI Consultation ${arrow}</a>
         </div>
+        <div class="mega-menu-brandscape" aria-hidden="true">
+          <img src="assets/images/reach-first-logo.svg" alt="">
+          <span></span>
+        </div>
       </div>
     </div>`;
 
