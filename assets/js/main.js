@@ -69,6 +69,8 @@ if (isSharedConsultationPage) {
 const siteFooter = document.querySelector('.site-footer');
 if (siteFooter) {
   const footerArrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>';
+  const footerEmail = '<svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>';
+  const footerPhone = '<svg class="footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>';
   siteFooter.innerHTML = `
     <div class="site-container footer-shell">
       <div class="footer-panel">
@@ -78,8 +80,8 @@ if (siteFooter) {
             <p class="footer-tagline">AI automation for growing service businesses.</p>
             <p class="footer-description">Practical automation, connected technology, and digital growth support built around the way your business works.</p>
             <div class="footer-contact-compact">
-              <a href="mailto:info@reachfirst.com">info@reachfirst.com</a>
-              <a href="tel:+18447773224">1-844-777-3224</a>
+              <a href="mailto:info@reachfirst.com">${footerEmail}<span>info@reachfirst.com</span></a>
+              <a href="tel:+18447773224">${footerPhone}<span>1-844-777-3224</span></a>
             </div>
             <p class="footer-coverage"><span aria-hidden="true"></span>Serving Canada and the United States.</p>
           </div>
@@ -143,8 +145,9 @@ document.querySelectorAll('.faq-page-list').forEach((list) => {
   });
 });
 
-const header = document.querySelector('[data-site-header]');
-if (header) {
+const legacyHeader = document.querySelector('[data-site-header]');
+if (false && legacyHeader) {
+  const header = legacyHeader;
   header.querySelectorAll('a[href$="about-us.html"]').forEach((link) => {
     link.textContent = 'About us';
   });
@@ -419,6 +422,278 @@ if (header) {
   const updateShadow = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
   window.addEventListener('scroll', updateShadow, { passive: true });
   updateShadow();
+}
+
+// Shared immersive navigation. The existing page headers remain the semantic
+// mounting point while this single implementation keeps every route in sync.
+const siteHeader = document.querySelector('[data-site-header]');
+if (siteHeader) {
+  document.querySelector('#mobile-drawer')?.remove();
+
+  const arrow = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>';
+  siteHeader.innerHTML = `
+    <div class="site-container header-row mega-header-row">
+      <a class="header-brand mega-header-brand" href="./" aria-label="Reach First home">
+        <img class="brand-logo" src="assets/images/reach-first-logo.svg" width="301" height="34" alt="Reach First">
+      </a>
+      <nav class="mega-header-nav" aria-label="Primary navigation">
+        <a href="services.html">Services</a>
+        <a href="industries.html">Industries</a>
+        <a href="how-we-work.html">How We Work</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Blogs</a>
+        <a href="about-us.html">About us</a>
+        <span class="mega-header-quote" aria-hidden="true">AI Automation for Growing Service Businesses</span>
+      </nav>
+      <div class="mega-header-actions">
+        <a class="button button-primary mega-header-cta" href="book-consultation.html">Book AI Consultation ${arrow}</a>
+        <button class="mega-menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-mega-menu" aria-expanded="false">
+          <span class="mega-menu-toggle-label" aria-hidden="true">Menu</span>
+          <span class="mega-menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+    <div id="site-mega-menu" class="site-mega-menu" aria-hidden="true" hidden>
+      <div class="site-container mega-menu-shell">
+        <div class="mega-menu-intro" data-mega-reveal>
+          <span>Navigation</span>
+        </div>
+
+        <nav class="mega-menu-grid" aria-label="Full website navigation">
+          <section class="mega-menu-primary" data-mega-column>
+            <p class="mega-menu-kicker">Explore</p>
+            <ol class="mega-primary-list">
+              <li><span>01</span><a href="./">Home</a></li>
+              <li><span>02</span><a href="services.html">Services</a></li>
+              <li><span>03</span><a href="industries.html">Industries</a></li>
+              <li><span>04</span><a href="how-we-work.html">How We Work</a></li>
+              <li><span>05</span><a href="case-studies.html">Case Studies</a></li>
+              <li><span>06</span><a href="insights.html">Blogs</a></li>
+              <li><span>07</span><a href="about-us.html">About us</a></li>
+              <li><span>08</span><a href="faq.html">FAQs</a></li>
+            </ol>
+          </section>
+
+          <details class="mega-menu-group" data-mega-group data-mega-column>
+            <summary>Services<span aria-hidden="true"></span></summary>
+            <div class="mega-menu-group-content">
+              <a class="mega-overview-link" href="services.html">All services ${arrow}</a>
+              <ul>
+                <li><a href="ai-consulting-automation-planning.html">AI Consulting &amp; Automation Planning</a></li>
+                <li><a href="business-workflow-automation.html">Business Workflow Automation</a></li>
+                <li><a href="sales-crm-automation.html">Sales &amp; CRM Automation</a></li>
+                <li><a href="ai-agents-customer-support.html">AI Agents &amp; Customer Support</a></li>
+                <li><a href="ai-voice-agents.html">AI Voice Agents</a></li>
+                <li><a href="custom-ai-applications-integrations.html">Custom AI Applications &amp; Integrations</a></li>
+                <li><a href="managed-ai-automation-support.html">Managed AI &amp; Automation Support</a></li>
+                <li><a href="digital-marketing-services.html">Digital Marketing Services</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="mega-menu-group" data-mega-group data-mega-column>
+            <summary>Home &amp; Field<span aria-hidden="true"></span></summary>
+            <div class="mega-menu-group-content">
+              <a class="mega-overview-link" href="home-field-services.html">Industry overview ${arrow}</a>
+              <ul>
+                <li><a href="hvac-industry.html">HVAC</a></li>
+                <li><a href="plumbing-industry.html">Plumbing</a></li>
+                <li><a href="electrical-industry.html">Electrical</a></li>
+                <li><a href="roofing-industry.html">Roofing</a></li>
+                <li><a href="towing-industry.html">Towing</a></li>
+                <li><a href="construction-industry.html">Construction</a></li>
+                <li><a href="landscaping-industry.html">Landscaping</a></li>
+                <li><a href="cleaning-industry.html">Cleaning</a></li>
+                <li><a href="solar-industry.html">Solar</a></li>
+                <li><a href="moving-industry.html">Moving</a></li>
+                <li><a href="renovation-industry.html">Renovation</a></li>
+                <li><a href="property-services-industry.html">Property Services</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="mega-menu-group" data-mega-group data-mega-column>
+            <summary>Professional<span aria-hidden="true"></span></summary>
+            <div class="mega-menu-group-content">
+              <a class="mega-overview-link" href="professional-services.html">Industry overview ${arrow}</a>
+              <ul>
+                <li><a href="consulting-firms-industry.html">Consulting Firms</a></li>
+                <li><a href="marketing-agencies-industry.html">Marketing Agencies</a></li>
+                <li><a href="recruitment-businesses-industry.html">Recruitment Businesses</a></li>
+                <li><a href="legal-services-industry.html">Legal Services</a></li>
+                <li><a href="accounting-firms-industry.html">Accounting Firms</a></li>
+                <li><a href="advisory-teams-industry.html">Advisory Teams</a></li>
+                <li><a href="it-services-industry.html">IT Services</a></li>
+                <li><a href="architecture-firms-industry.html">Architecture Firms</a></li>
+                <li><a href="engineering-consultancies-industry.html">Engineering Consultancies</a></li>
+                <li><a href="training-providers-industry.html">Training Providers</a></li>
+                <li><a href="creative-studios-industry.html">Creative Studios</a></li>
+                <li><a href="b2b-service-firms-industry.html">B2B Service Firms</a></li>
+              </ul>
+            </div>
+          </details>
+
+          <section class="mega-menu-work" data-mega-column>
+            <details class="mega-menu-group mega-work-group" data-mega-group>
+              <summary>Case Studies<span aria-hidden="true"></span></summary>
+              <div class="mega-menu-group-content">
+                <a class="mega-overview-link" href="case-studies.html">All case studies ${arrow}</a>
+                <ul>
+                  <li><a href="action-towing-case-study.html">Action Towing</a></li>
+                  <li><a href="https://www.reachfirst.com/case-studies/akron-roofing/">AKRoN Roofing</a></li>
+                </ul>
+              </div>
+            </details>
+            <details class="mega-menu-group mega-work-group mega-blog-group" data-mega-group>
+              <summary>Latest Blogs<span aria-hidden="true"></span></summary>
+              <div class="mega-menu-group-content">
+                <a class="mega-overview-link" href="insights.html">All blogs ${arrow}</a>
+                <ul>
+                  <li><a href="insight-ai-2026.html"><small>AI-powered marketing</small>Why Businesses Are Turning to AI</a></li>
+                  <li><a href="insight-ai-vs-traditional-marketing.html"><small>AI &amp; strategy</small>AI vs Traditional Marketing</a></li>
+                  <li><a href="insight-ai-social-media-growth.html"><small>Social media</small>AI Social Growth Blueprint</a></li>
+                  <li><a href="insight-organic-seo-growth.html"><small>Organic search</small>Next Generation SEO Growth</a></li>
+                  <li><a href="insight-alberta-ai-driven-market.html"><small>Local growth</small>Alberta's AI-Driven Market</a></li>
+                  <li><a href="insight-seo-leads-without-paid-ads.html"><small>Lead generation</small>SEO Leads Without Paid Ads</a></li>
+                  <li><a href="insight-zero-click-search.html"><small>Search behaviour</small>Zero-Click Search Leads</a></li>
+                </ul>
+              </div>
+            </details>
+          </section>
+        </nav>
+
+        <div class="mega-menu-footer" data-mega-reveal>
+          <div class="mega-menu-contact">
+            <span>Start a conversation</span>
+            <a href="mailto:info@reachfirst.com">info@reachfirst.com</a>
+            <a href="tel:+18447773224">1-844-777-3224</a>
+          </div>
+          <div class="mega-menu-utility">
+            <a href="https://www.linkedin.com/company/reach-first">LinkedIn</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms-conditions.html">Terms</a>
+          </div>
+          <a class="mega-menu-cta" href="book-consultation.html">Book AI Consultation ${arrow}</a>
+        </div>
+      </div>
+    </div>`;
+
+  const menuToggle = siteHeader.querySelector('.mega-menu-toggle');
+  const menuOverlay = siteHeader.querySelector('#site-mega-menu');
+  const menuGroups = [...siteHeader.querySelectorAll('[data-mega-group]')];
+  document.body.append(menuOverlay);
+  const menuBackgroundRegions = [...document.querySelectorAll('main, footer')];
+  const desktopMenuQuery = matchMedia('(min-width: 1100px)');
+  const reduceMenuMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let menuCloseTimer;
+  let menuFocusTimer;
+
+  const currentHeaderPage = location.pathname.split('/').pop() || 'index.html';
+  siteHeader.querySelectorAll('.mega-header-nav a, .mega-header-cta').forEach((link) => {
+    const linkPage = new URL(link.href, location.href).pathname.split('/').pop() || 'index.html';
+    if (currentHeaderPage === linkPage) {
+      link.classList.add('is-current');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+
+  const setMenuGroupState = () => {
+    menuGroups.forEach((group) => { group.open = desktopMenuQuery.matches; });
+  };
+  setMenuGroupState();
+  desktopMenuQuery.addEventListener('change', setMenuGroupState);
+
+  menuOverlay.querySelectorAll('a').forEach((link, index) => {
+    link.style.setProperty('--link-index', index);
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    const linkPage = new URL(link.href, location.href).pathname.split('/').pop() || 'index.html';
+    if (currentPage === linkPage && link.origin === location.origin) {
+      link.classList.add('is-current');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+  menuOverlay.querySelectorAll('[data-mega-column]').forEach((column, index) => {
+    column.style.setProperty('--column-index', index);
+  });
+
+  const focusableMenuItems = () => [menuToggle, ...menuOverlay.querySelectorAll('a[href], summary')]
+    .filter((element) => element.getClientRects().length && !element.hasAttribute('disabled'));
+
+  const openMegaMenu = () => {
+    clearTimeout(menuCloseTimer);
+    clearTimeout(menuFocusTimer);
+    menuOverlay.hidden = false;
+    menuOverlay.setAttribute('aria-hidden', 'false');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    menuToggle.setAttribute('aria-label', 'Close navigation');
+    menuToggle.querySelector('.mega-menu-toggle-label').textContent = 'Close';
+    siteHeader.classList.add('mega-menu-active');
+    menuBackgroundRegions.forEach((region) => { region.inert = true; });
+    document.documentElement.style.setProperty('--menu-scrollbar-width', `${window.innerWidth - document.documentElement.clientWidth}px`);
+    document.documentElement.classList.add('mega-menu-open');
+    requestAnimationFrame(() => requestAnimationFrame(() => menuOverlay.classList.add('is-open')));
+    menuFocusTimer = window.setTimeout(() => {
+      menuOverlay.querySelector('.mega-primary-list a')?.focus({ preventScroll: true });
+    }, reduceMenuMotion.matches ? 0 : 240);
+  };
+
+  const closeMegaMenu = ({ restoreFocus = true } = {}) => {
+    clearTimeout(menuFocusTimer);
+    menuOverlay.classList.remove('is-open');
+    menuOverlay.setAttribute('aria-hidden', 'true');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation');
+    menuToggle.querySelector('.mega-menu-toggle-label').textContent = 'Menu';
+    siteHeader.classList.remove('mega-menu-active');
+    menuBackgroundRegions.forEach((region) => { region.inert = false; });
+    document.documentElement.classList.remove('mega-menu-open');
+    document.documentElement.style.removeProperty('--menu-scrollbar-width');
+    if (restoreFocus) menuToggle.focus({ preventScroll: true });
+    clearTimeout(menuCloseTimer);
+    menuCloseTimer = window.setTimeout(() => { menuOverlay.hidden = true; }, reduceMenuMotion.matches ? 0 : 720);
+  };
+
+  menuToggle.addEventListener('click', () => {
+    if (menuToggle.getAttribute('aria-expanded') === 'true') closeMegaMenu();
+    else openMegaMenu();
+  });
+
+  menuGroups.forEach((group) => {
+    group.querySelector('summary')?.addEventListener('click', (event) => {
+      if (desktopMenuQuery.matches) event.preventDefault();
+    });
+  });
+
+  menuOverlay.addEventListener('click', (event) => {
+    if (event.target.closest('a[href]')) closeMegaMenu({ restoreFocus: false });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!siteHeader.classList.contains('mega-menu-active')) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeMegaMenu();
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    const focusable = focusableMenuItems();
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  const updateHeaderHeight = () => document.documentElement.style.setProperty('--header-height', `${siteHeader.offsetHeight}px`);
+  new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+  updateHeaderHeight();
+  const updateHeaderShadow = () => siteHeader.classList.toggle('is-scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', updateHeaderShadow, { passive: true });
+  updateHeaderShadow();
 }
 
 // Service-specific hero infographics. The original semantic label remains on the wrapper.
