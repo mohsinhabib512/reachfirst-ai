@@ -1,0 +1,429 @@
+{
+  "about-us": {
+    "title": "About Reach First | Practical AI Automation",
+    "description": "Meet Reach First, an Edmonton-based team helping service businesses across Canada and the United States adopt practical AI automation and connected workflows.",
+    "class": "cta-compact-top",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "accounting-firms-industry": {
+    "title": "Accounting Firms Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for accounting firms.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "action-towing-case-study": {
+    "title": "Action Towing Case Study | Reach First",
+    "description": "Action Towing case study: a responsive website experience for an Edmonton towing and roadside-assistance provider.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "advisory-teams-industry": {
+    "title": "Advisory Teams Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for advisory teams.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "ai-agents-customer-support": {
+    "title": "AI Agents &amp; Customer Support | Reach First",
+    "description": "AI agents that use approved business information, assist with routine requests, and hand complex cases to staff.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "ai-consulting-automation-planning": {
+    "title": "AI Consulting &amp; Automation Planning | Reach First",
+    "description": "Assess workflows, prioritize practical AI automation opportunities, and define an implementation roadmap with Reach First.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "ai-voice-agents": {
+    "title": "AI Voice Agents | Reach First",
+    "description": "AI voice agents for routine inbound enquiries, appointment requests, call routing, summaries, and staff handoffs.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "architecture-firms-industry": {
+    "title": "Architecture Firms Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for architecture firms.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "b2b-service-firms-industry": {
+    "title": "B2B Service Firms Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for b2b service firms.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "book-consultation": {
+    "title": "Request a consultation by email | Reach First",
+    "description": "Request a consultation by email with Reach First to discuss AI automation, connected workflows, and practical improvements for your service business.",
+    "class": "consultation-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "business-workflow-automation": {
+    "title": "Business Workflow Automation | Reach First",
+    "description": "Connect repetitive tasks, approvals, information, and handoffs with business workflow automation from Reach First.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "case-studies": {
+    "title": "Case Studies | Reach First",
+    "description": "Explore Reach First case studies and selected project experience across roofing, HVAC, towing, automotive, welding, and landscaping.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "cleaning-industry": {
+    "title": "Cleaning Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Cleaning businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "construction-industry": {
+    "title": "Construction Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Construction businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "consulting-firms-industry": {
+    "title": "Consulting Firms Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for consulting firms.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "creative-studios-industry": {
+    "title": "Creative Studios Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for creative studios.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "custom-ai-applications-integrations": {
+    "title": "Custom AI Applications &amp; Integrations | Reach First",
+    "description": "Custom AI applications, internal tools, document workflows, portals, and system integrations designed around your business.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "digital-marketing-services": {
+    "title": "Digital Marketing Services | Reach First",
+    "description": "Explore Reach First branding, website development, social media optimization, SEO, custom solutions, digital advertising, and software development services.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "electrical-industry": {
+    "title": "Electrical Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Electrical businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "engineering-consultancies-industry": {
+    "title": "Engineering Consultancies Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for engineering consultancies.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions | Reach First",
+    "description": "Answers to common questions about Reach First's AI automation, connected systems, digital marketing, project process, responsible implementation, and ongoing support.",
+    "class": "faq-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "home-field-services": {
+    "title": "Home &amp; Field Services | Reach First",
+    "description": "Explore practical marketing, automation, and technology solutions for home and field service businesses, from lead intake through dispatch, service, and follow-up.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "how-we-work": {
+    "title": "How We Work | Reach First",
+    "description": "See how Reach First assesses, plans, pilots, implements, and improves practical automation and digital growth engagements.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "hvac-industry": {
+    "title": "HVAC Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for HVAC businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "index": {
+    "title": "AI Automation &amp; Integrations | Reach First",
+    "description": "Reach First helps established service businesses plan AI automation, connect their systems, and simplify everyday workflows in Canada and the United States.",
+    "class": "home-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "industries": {
+    "title": "Industries We Serve | Reach First",
+    "description": "Explore AI automation, technology, and digital marketing solutions for home and field service businesses and professional service firms.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "insight-ai-2026": {
+    "title": "Why Businesses Are Turning to AI Powered Marketing Agencies in 2026 | Reach First",
+    "description": "A practical guide to how businesses can evaluate AI-powered marketing agencies, from audience intelligence and campaign operations to human oversight.",
+    "class": "blog-detail-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "insight-ai-social-media-growth": {
+    "title": "The Ultimate AI Powered Growth Blueprint For Social Media Optimization | Reach First",
+    "description": "A practical framework for using AI to improve social media research, planning, production, and measurement without losing brand judgement.",
+    "class": "blog-detail-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "insight-ai-vs-traditional-marketing": {
+    "title": "AI Powered Marketing vs Traditional Digital Marketing: Which Delivers Better Results? | Reach First",
+    "description": "A practical comparison of AI-powered and traditional digital marketing, including where each approach works best and why strong strategy still connects them.",
+    "class": "blog-detail-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "insight-alberta-ai-driven-market": {
+    "title": "How Alberta Businesses Win Customers in 2026’s AI-Driven Market | Reach First",
+    "description": "How Alberta businesses can strengthen local discovery and customer trust across search, AI tools, reviews, social platforms, and their websites.",
+    "class": "blog-detail-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "insight-organic-seo-growth": {
+    "title": "Next Generation Search Dominance Through Organic SEO Growth | Reach First",
+    "description": "A practical guide to organic SEO growth built around technical quality, useful information, clear authority, and modern search experiences.",
+    "class": "blog-detail-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "insight-seo-leads-without-paid-ads": {
+    "title": "How SEO Services Generate Consistent Leads Without Paid Advertising | Reach First",
+    "description": "How a structured SEO program can build durable lead generation through useful content, technical quality, commercial intent, and conversion design.",
+    "class": "blog-detail-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "insight-zero-click-search": {
+    "title": "How Edmonton Businesses Can Capture Leads From Zero-Click Searches | Reach First",
+    "description": "Practical ways Edmonton businesses can remain visible and earn enquiries when search results answer more questions before a website visit.",
+    "class": "blog-detail-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "insights": {
+    "title": "Blogs | Reach First",
+    "description": "Practical Reach First blogs on AI-powered marketing, SEO, digital advertising, social media, websites, and business automation.",
+    "class": "cta-compact-top",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "it-services-industry": {
+    "title": "IT Services Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for it services.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "landscaping-industry": {
+    "title": "Landscaping Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Landscaping businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "legal-services-industry": {
+    "title": "Legal Services Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for legal services.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "managed-ai-automation-support": {
+    "title": "Managed AI &amp; Automation Support | Reach First",
+    "description": "Monitoring, maintenance, documentation, team support, and planned improvements for agreed AI automation implementations.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "marketing-agencies-industry": {
+    "title": "Marketing Agencies Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for marketing agencies.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "moving-industry": {
+    "title": "Moving Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Moving businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "plumbing-industry": {
+    "title": "Plumbing Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Plumbing businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "privacy-policy": {
+    "title": "Privacy Policy | Reach First",
+    "description": "Read the Reach First privacy policy, including how we collect, use, protect, and share personal information and how to exercise your privacy choices.",
+    "class": "legal-page privacy-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "professional-services": {
+    "title": "Professional Services | Reach First",
+    "description": "Explore practical marketing, automation, and technology solutions for professional service firms, from lead qualification and onboarding through delivery, approvals, billing, and client growth.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "property-services-industry": {
+    "title": "Property Services Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Property Services businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "recruitment-businesses-industry": {
+    "title": "Recruitment Businesses Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for recruitment businesses.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "renovation-industry": {
+    "title": "Renovation Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Renovation businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "roofing-industry": {
+    "title": "Roofing Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Roofing businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "sales-crm-automation": {
+    "title": "Sales &amp; CRM Automation | Reach First",
+    "description": "Coordinate enquiry capture, lead assignment, follow-ups, reminders, and CRM updates with Reach First.",
+    "class": "",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "services": {
+    "title": "AI Automation &amp; Digital Marketing Services | Reach First",
+    "description": "Explore Reach First's AI automation, integrations, managed support, and digital marketing services for growing businesses.",
+    "class": "cta-compact-top",
+    "scripts": [
+      "assets/vendor/gsap/gsap.min.js",
+      "assets/vendor/gsap/ScrollTrigger.min.js",
+      "assets/js/main.js",
+      "assets/js/services-delivery.js"
+    ]
+  },
+  "solar-industry": {
+    "title": "Solar Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Solar businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "terms-conditions": {
+    "title": "Terms &amp; Conditions | Reach First",
+    "description": "Read the Reach First Terms and Conditions governing website use, orders, services, payments, intellectual property, cancellations, liability, and disputes.",
+    "class": "legal-page terms-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "towing-industry": {
+    "title": "Towing Industry Solutions | Reach First",
+    "description": "Explore practical website, marketing, and AI automation opportunities for Towing businesses.",
+    "class": "trade-industry-page",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  },
+  "training-providers-industry": {
+    "title": "Training Providers Solutions | Reach First",
+    "description": "Explore practical marketing, workflow, and AI automation opportunities for training providers.",
+    "class": "trade-industry-page professional-industry-detail",
+    "scripts": [
+      "assets/js/main.js"
+    ]
+  }
+}

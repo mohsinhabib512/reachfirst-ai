@@ -1,0 +1,16 @@
+/*
+Theme Name: Reach First
+Description: Reach First AI automation website. Standalone page templates with assets loaded in header.php and footer.php.
+Version: 1.0.1
+Requires at least: 6.0
+Requires PHP: 7.4
+Text Domain: reachfirst
+*/
+html { scroll-padding-top: 7rem; }
+.admin-bar .site-header { top: 32px; }
+.rf-content { max-width: 76rem; margin: auto; padding: 8rem 1.5rem 4rem; }
+.rf-content h1 { font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 2rem; }
+.rf-content p { margin-bottom: 1rem; }
+.rf-content a { text-decoration: underline; }
+@media (max-width: 782px) { .admin-bar .site-header { top: 46px; } }
+@media (max-width: 600px) { .admin-bar .site-header { top: 0; } }
