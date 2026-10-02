@@ -1,0 +1,11 @@
+/*
+Theme Name: Reach First
+Description: Reach First AI automation website theme.
+Version: 1.0.1
+Text Domain: reachfirst
+*/
+
+/* The compiled design lives in assets/css/styles.css. */
+body.admin-bar .site-header { top: 32px; }
+@media (max-width: 782px) { body.admin-bar .site-header { top: 46px; } }
+@media (max-width: 600px) { body.admin-bar .site-header { top: 0; } }

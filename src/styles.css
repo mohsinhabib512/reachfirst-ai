@@ -2977,7 +2977,7 @@ body.has-shared-consultation.cta-compact-top .shared-consultation { padding-top:
   .footer-main > .footer-column:nth-child(odd) { border-left: 1px solid rgb(170 187 198 / 34%); }
 }
 @media (min-width: 1100px) {
-  .footer-main { grid-template-columns: minmax(16rem, 1.35fr) repeat(2, minmax(10rem, 1fr)) minmax(9rem, 0.82fr) minmax(10rem, 0.9fr); }
+  .footer-main { grid-template-columns: minmax(0, 1.35fr) repeat(2, minmax(0, 1fr)) minmax(0, 0.82fr) minmax(0, 0.9fr); }
   .footer-main > * { padding: clamp(1.75rem, 2.2vw, 2.25rem); }
   .footer-main > * + * { border-top: 0; border-left: 1px solid rgb(170 187 198 / 34%); }
   .site-footer .footer-bottom { padding-inline: clamp(2rem, 2.6vw, 2.75rem); }
@@ -4120,3 +4120,10 @@ html.mega-menu-open body { padding-right: var(--menu-scrollbar-width, 0); }
   .mega-menu-toggle,
   .mega-menu-toggle-icon i { transition-duration: 0.01ms !important; transition-delay: 0ms !important; }
 }
+
+/* Keep contact icons and footer text aligned at every column width. */
+.footer-contact-compact a { display: flex; align-items: center; gap: .6rem; min-height: 36px; }
+.footer-contact-compact .footer-contact-icon { width: 16px; height: 16px; flex: none; }
+.footer-contact-compact span { overflow-wrap: anywhere; }
+.footer-column ul { margin: 0; padding: 0; list-style: none; }
+.footer-column .footer-link { overflow-wrap: anywhere; }
