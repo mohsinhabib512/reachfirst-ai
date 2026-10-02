@@ -4,9 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check:site": "node scripts/check-site.mjs",
-    "build:wordpress": "node scripts/build-wordpress.mjs",
-    "check:wordpress": "node scripts/check-wordpress.mjs",
     "build": "tailwindcss -i ./src/styles.css -o ./assets/css/styles.css --minify",
     "generate:industries": "node scripts/generate-industry-pages.mjs && node scripts/generate-professional-industry-pages.mjs",
     "generate:blogs": "node scripts/generate-blog-pages.mjs",
