@@ -236,6 +236,7 @@
   .hero-label-enquiries { left: 0; top: 10%; }
   .hero-label-scheduling { right: 0; top: 8%; }
   .hero-label-crm { right: 2%; bottom: 10%; }
+  .hero-label-documents { left: 2%; bottom: 10%; }
   @keyframes hero-pipe-flow { from { stroke-dashoffset: 18; } to { stroke-dashoffset: -120; } }
   @keyframes hero-orbit-turn { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   .opportunities { background: var(--color-surface); border-top: 1px solid var(--color-line); }
